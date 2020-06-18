@@ -2,16 +2,19 @@
 	"nativescript": {
 		"id": "app.vindicam",
 		"tns-android": {
-			"version": "6.5.0"
+			"version": "6.5.1"
 		},
 		"tns-ios": {
-			"version": "6.5.0"
+			"version": "6.5.1"
 		}
 	},
 	"main": "app.js",
 	"description": "NativeScript Application",
 	"license": "SEE LICENSE IN <your-license-filename>",
 	"repository": "<fill-your-repository-here>",
+	"scripts": {
+		"update-ns-webpack": "update-ns-webpack --configs"
+	},
 	"dependencies": {
 		"@nativescript/core": "^6.5.7",
 		"@nativescript/theme": "^2.3.3",
