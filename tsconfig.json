@@ -1,17 +1,14 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es5",
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"noEmitHelpers": true,
-		"noEmitOnError": true,
-		"skipLibCheck": true,
-		"lib": ["es2017", "dom", "es6"],
 		"baseUrl": ".",
-		"paths": {
-			"~/*": ["app/*"]
-		}
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"lib": ["dom", "esnext"],
+		"module": "commonjs",
+		"noEmitHelpers": true,
+		"paths": { "~/*": ["app/*"] },
+		"skipLibCheck": true,
+		"target": "es5"
 	},
 	"exclude": ["node_modules", "platforms"]
 }
