@@ -1,4 +1,9 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedTo="navigatedTo" xmlns:webrtc="nativescript-webrtc-plugin">
+<Page
+	xmlns="http://schemas.nativescript.org/tns.xsd"
+	navigatingTo="navigatingTo"
+	navigatedTo="navigatedTo"
+	xmlns:webrtc="nativescript-webrtc-plugin"
+>
     <ActionBar title="My App" icon="" />
 
     <StackLayout>
