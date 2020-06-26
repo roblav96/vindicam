@@ -1,5 +1,5 @@
 {
-	"name": "vindicam",
+	"name": "Vindicam",
 	"description": "Vindicate yourself with a live video recording saved to remote storage",
 	"main": "app.js",
 	"nativescript": {
@@ -15,14 +15,14 @@
 		"update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {
-		"@nativescript/core": "^6.5.7",
+		"@nativescript/core": "^6.5.8",
 		"@nativescript/theme": "^2.3.3",
 		"nativescript-webrtc-plugin": "^2.0.0-alpha.22",
-		"tns-core-modules": "^6.5.7"
+		"tns-core-modules": "^6.5.8"
 	},
 	"devDependencies": {
 		"nativescript-dev-webpack": "^1.5.1",
-		"tns-platform-declarations": "^6.5.7",
+		"tns-platform-declarations": "^6.5.8",
 		"typescript": "^3.9.5"
 	},
 	"license": "Unlicense",
