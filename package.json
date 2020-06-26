@@ -1,5 +1,6 @@
 {
-	"name": "Vindicam",
+	"name": "vindicam",
+	"version": "0.0.1",
 	"description": "Vindicate yourself with a live video recording saved to remote storage",
 	"main": "app.js",
 	"nativescript": {
