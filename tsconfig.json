@@ -3,7 +3,7 @@
 		"baseUrl": ".",
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"lib": ["dom", "esnext"],
+		"lib": ["esnext"],
 		"module": "commonjs",
 		"noEmitHelpers": true,
 		"paths": { "~/*": ["app/*"] },
