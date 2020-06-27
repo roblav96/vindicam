@@ -17,7 +17,7 @@
 		"del": "del hooks node_modules platforms",
 		"rmp": "del platforms",
 		"postinstall": "update-ns-webpack --configs && run-p postinstall:*",
-		"postinstall:webpack:alias": "sd -s \"    alias['~'] = appFullPath;\" \"alias['~'] = appFullPath; alias['@'] = appFullPath;\" webpack.config.js",
+		"postinstall:webpack.alias": "sd -s \"    alias['~'] = appFullPath;\" \"alias['~'] = appFullPath; alias['@'] = appFullPath;\" webpack.config.js",
 		"update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {

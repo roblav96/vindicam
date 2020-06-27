@@ -15,12 +15,12 @@ android {
 	}
 }
 
-println "████ ================"
+println "████"
 // println "████ getProperties -> " + project.getProperties()
 println "████ compileSdk -> " + project.getProperty("compileSdk")
 println "████ targetSdk -> " + project.getProperty("targetSdk")
 println "████ buildToolsVersion -> " + project.getProperty("buildToolsVersion")
 // println "████ supportVersion -> " + project.getProperty("supportVersion")
 println "████ minSdkVersion -> " + android.defaultConfig.getProperty("minSdkVersion").mApiLevel
-println "████ android.compileOptions -> " + android.compileOptions.getProperties()
-println "████ ================"
+// println "████ android.compileOptions -> " + android.compileOptions.getProperties()
+println "████"
