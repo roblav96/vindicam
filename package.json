@@ -13,17 +13,25 @@
 		}
 	},
 	"scripts": {
+		"au": "adb uninstall app.vindicam || true",
+		"clean": "del hooks node_modules platforms",
+		"rmp": "del platforms",
 		"update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {
 		"@nativescript/core": "^6.5.8",
 		"@nativescript/theme": "^2.3.3",
+		"lodash-es": "^4.17.15",
 		"nativescript-webrtc-plugin": "^2.0.0-alpha.22",
+		"rambda": "^5.8.0",
+		"rambdax": "^3.7.0",
 		"shimmer": "^1.2.1",
 		"tns-core-modules": "^6.5.8"
 	},
 	"devDependencies": {
+		"@types/lodash": "^4.14.157",
 		"@types/shimmer": "^1.0.1",
+		"del-cli": "^3.0.1",
 		"nativescript-dev-webpack": "^1.5.1",
 		"tns-platform-declarations": "^6.5.8",
 		"typescript": "^3.9.5"

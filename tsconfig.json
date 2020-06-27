@@ -16,5 +16,5 @@
 		"app/**/*.d.ts",
 		"app/**/*.ts"
 	],
-	"exclude": ["node_modules", "platforms"]
+	"exclude": ["platforms"]
 }

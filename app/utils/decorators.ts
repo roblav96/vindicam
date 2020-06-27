@@ -1,3 +1,4 @@
+import * as R from 'rambda'
 import * as shimmer from 'shimmer'
 import { Observable, ViewBase } from '@nativescript/core'
 import { Property, PropertyOptions } from '@nativescript/core/ui/core/properties'
@@ -13,7 +14,7 @@ export function ObservableProperty<C extends Observable, T>(
 			},
 			set(this: C, value) {
 				if (options.cache && this[`__${key}`] === value) return
-				let oldValue = _.clone(this[`__${key}`])
+				let oldValue = R.clone(this[`__${key}`])
 				this[`__${key}`] = value
 				this.notifyPropertyChange(key, value, oldValue)
 				set && set.apply(this, [value, oldValue])
