@@ -1,9 +1,0 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedTo="navigatedTo" xmlns:webrtc="nativescript-webrtc-plugin">
-    <ActionBar title="My App" icon="" />
-
-    <StackLayout>
-        <webrtc:WebRTCView id="remoteVideoView" height="45%" />
-        <webrtc:WebRTCView id="localVideoView" height="45%" />
-        <Button text="TAP" tap="{{ onTap }}" class="-primary" height="10%" />
-    </StackLayout>
-</Page>

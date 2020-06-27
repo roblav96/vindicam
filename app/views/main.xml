@@ -1,0 +1,9 @@
+<Page navigatingTo="navigatingTo" navigatedTo="navigatedTo" xmlns:webrtc="nativescript-webrtc-plugin">
+    <ActionBar title="Vindicam" />
+
+    <StackLayout>
+        <webrtc:WebRTCView id="remote" height="40%" />
+        <webrtc:WebRTCView id="local" height="40%" />
+        <Button text="Connect" tap="{{ doConnect }}" class="-primary" height="10%" />
+    </StackLayout>
+</Page>

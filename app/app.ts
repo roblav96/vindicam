@@ -1,3 +1,4 @@
-import { Application } from '@nativescript/core'
+import * as core from '@nativescript/core'
 
-Application.run({ moduleName: 'app-root' })
+core.Application.setCssFileName('app.css')
+core.Application.run('frame')
