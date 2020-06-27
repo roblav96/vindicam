@@ -64,6 +64,7 @@ module.exports = (env) => {
 	let coreModulesPackageName = 'tns-core-modules'
 	const alias = env.alias || {}
 	alias['~'] = appFullPath
+	alias['@'] = appFullPath
 
 	if (hasRootLevelScopedModules) {
 		coreModulesPackageName = '@nativescript/core'

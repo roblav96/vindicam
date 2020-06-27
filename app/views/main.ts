@@ -1,5 +1,5 @@
 import { Observable, EventData, Page, NavigatedData } from '@nativescript/core'
-import { WebRTC } from 'nativescript-webrtc-plugin'
+import { webrtc } from '@/adapters/webrtc'
 
 export function navigatingTo(args: NavigatedData) {
 	let page = args.object as Page

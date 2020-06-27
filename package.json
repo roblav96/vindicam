@@ -19,9 +19,11 @@
 		"@nativescript/core": "^6.5.8",
 		"@nativescript/theme": "^2.3.3",
 		"nativescript-webrtc-plugin": "^2.0.0-alpha.22",
+		"shimmer": "^1.2.1",
 		"tns-core-modules": "^6.5.8"
 	},
 	"devDependencies": {
+		"@types/shimmer": "^1.0.1",
 		"nativescript-dev-webpack": "^1.5.1",
 		"tns-platform-declarations": "^6.5.8",
 		"typescript": "^3.9.5"
