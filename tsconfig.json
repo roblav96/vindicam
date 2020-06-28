@@ -6,7 +6,7 @@
 		"lib": ["esnext"],
 		"module": "commonjs",
 		"noEmitHelpers": true,
-		"paths": { "~/*": ["app/*"], "@/*": ["app/*"] },
+		"paths": { "~/*": ["app/*"] },
 		"skipLibCheck": true,
 		"target": "es5"
 	},

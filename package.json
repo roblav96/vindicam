@@ -17,9 +17,8 @@
 		"xcode": "tns prepare ios && open platforms/ios/vindicam.xcworkspace",
 		"del": "del hooks node_modules platforms",
 		"delp": "del platforms",
-		"postinstall": "update-ns-webpack --configs && run-p postinstall:*",
-		"postinstall:webpack.alias": "sd -s \"    alias['~'] = appFullPath;\" \"    alias['@'] = appFullPath; alias['~'] = appFullPath;\" webpack.config.js",
-		"update-ns-webpack": "update-ns-webpack --configs"
+		"postinstall": "run-p postinstall:*",
+		"postinstall:update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {
 		"@nativescript/core": "^6.5.8",
