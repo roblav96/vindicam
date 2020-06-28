@@ -4,6 +4,9 @@
 /tsconfig.tns.json
 /webpack.config.js
 
+google-services.json
+GoogleService-Info.plist
+
 *.keystore
 *.log
 .DS_STORE
