@@ -11,7 +11,7 @@
 		"target": "es5"
 	},
 	"include": [
-		"node_modules/tns-platform-declarations/android-23.d.ts",
+		"node_modules/tns-platform-declarations/android-29.d.ts",
 		"node_modules/tns-platform-declarations/ios.d.ts",
 		"app/**/*.d.ts",
 		"app/**/*.ts"

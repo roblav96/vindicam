@@ -13,7 +13,7 @@
 		android:xlargeScreens="true"
 	/>
 
-	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="__APILEVEL__" />
+	<!-- <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="__APILEVEL__" /> -->
 
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

@@ -14,8 +14,10 @@
 	},
 	"scripts": {
 		"au": "adb uninstall app.vindicam || true",
+		"iu": "ideviceinstaller --uninstall app.vindicam || true",
+		"xcode": "tns prepare ios && open platforms/ios/vindicam.xcworkspace",
 		"del": "del hooks node_modules platforms",
-		"rmp": "del platforms",
+		"delp": "del platforms",
 		"postinstall": "update-ns-webpack --configs && run-p postinstall:*",
 		"postinstall:webpack.alias": "sd -s \"    alias['~'] = appFullPath;\" \"    alias['@'] = appFullPath; alias['~'] = appFullPath;\" webpack.config.js",
 		"update-ns-webpack": "update-ns-webpack --configs"
