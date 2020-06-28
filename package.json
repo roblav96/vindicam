@@ -1,8 +1,7 @@
 {
-	"name": "vindicam",
+	"name": "Vindicam",
 	"version": "0.0.1",
 	"description": "Vindicate yourself with a live video recording saved to remote storage",
-	"main": "app.js",
 	"nativescript": {
 		"id": "app.vindicam",
 		"tns-android": {
