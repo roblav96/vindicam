@@ -6,7 +6,7 @@ if (isAndroid) {
 		android.os.StrictMode.setThreadPolicy(
 			new android.os.StrictMode.ThreadPolicy.Builder().permitAll().build(),
 		)
-		// WebRTC.init()
+		WebRTC.init()
 	})
 }
 
