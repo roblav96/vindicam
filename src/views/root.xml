@@ -5,7 +5,6 @@
 	xmlns:webrtc="nativescript-webrtc-plugin"
 >
 	<ActionBar title="Vindicam" />
-
 	<StackLayout>
 		<webrtc:WebRTCView id="remote" height="40%" />
 		<webrtc:WebRTCView id="local" height="40%" />

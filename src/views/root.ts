@@ -6,12 +6,14 @@ export function navigatingTo(args: NavigatedData) {
 	page.bindingContext = new RootPage()
 }
 
-export function navigatedTo(args: NavigatedData) {
-	// WebRTC.init()
+export async function navigatedTo(args: NavigatedData) {
+	// await import('~/adapters/webrtc')
 }
 
 export class RootPage extends Observable {
-	tapConnect(args) {
-		console.log(`tapConnect ->`, args)
+	async tapConnect(args) {
+		console.log(`tapConnect`)
+		let { webrtc } = await import('~/adapters/webrtc')
+		console.log(`webrtc ->`, webrtc)
 	}
 }

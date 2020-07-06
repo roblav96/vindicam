@@ -3,18 +3,18 @@
 		"baseUrl": ".",
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"lib": ["esnext"],
+		"lib": ["dom", "esnext"],
 		"module": "commonjs",
 		"noEmitHelpers": true,
-		"paths": { "~/*": ["app/*"] },
+		"paths": { "~/*": ["src/*"] },
 		"skipLibCheck": true,
 		"target": "es5"
 	},
 	"include": [
 		"node_modules/tns-platform-declarations/android-29.d.ts",
 		"node_modules/tns-platform-declarations/ios.d.ts",
-		"app/**/*.d.ts",
-		"app/**/*.ts"
+		"src/**/*.d.ts",
+		"src/**/*.ts"
 	],
-	"exclude": ["platforms"]
+	"exclude": ["App_Resources", "platforms"]
 }

@@ -5,21 +5,17 @@
 	android:versionCode="10000"
 	android:versionName="1.0"
 >
-
 	<supports-screens
 		android:smallScreens="true"
 		android:normalScreens="true"
 		android:largeScreens="true"
 		android:xlargeScreens="true"
 	/>
-
 	<!-- <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="__APILEVEL__" /> -->
-
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 	<application
 		android:name="com.tns.NativeScriptApplication"
 		android:icon="@drawable/icon"
@@ -29,7 +25,6 @@
 		android:hardwareAccelerated="true"
 		android:usesCleartextTraffic="true"
 	>
-
 		<activity
 			android:name="com.tns.NativeScriptActivity"
 			android:label="@string/title_activity_kimera"
@@ -43,8 +38,6 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-
 		<activity android:name="com.tns.ErrorReportActivity" />
-
 	</application>
 </manifest>
