@@ -11,3 +11,12 @@ export const webrtc = new WebRTC({
 
 // 	}
 // }
+
+export async function ensurePermissions() {
+	if (!WebRTC.hasPermissions()) {
+		await WebRTC.requestPermissions()
+		if (!WebRTC.hasPermissions()) {
+			throw new Error(`!WebRTC.hasPermissions()`)
+		}
+	}
+}
