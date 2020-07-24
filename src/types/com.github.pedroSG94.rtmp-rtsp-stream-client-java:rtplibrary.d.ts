@@ -1,3 +1,4 @@
+
 declare module com {
 	export module github {
 		export module faucamp {
@@ -5766,3 +5767,6 @@ declare module net {
 		}
 	}
 }
+
+//Generics information:
+

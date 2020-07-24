@@ -21,7 +21,7 @@
 		"postinstall:update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {
-		"@nativescript/core": "^6.5.11",
+		"@nativescript/core": "^6.5.12",
 		"@nativescript/theme": "^2.3.3",
 		"lodash-es": "^4.17.15",
 		"nativescript-plugin-firebase": "^10.5.2",
@@ -30,15 +30,15 @@
 		"rambda": "^5.9.0",
 		"rambdax": "^3.7.0",
 		"shimmer": "^1.2.1",
-		"tns-core-modules": "^6.5.11"
+		"tns-core-modules": "^6.5.12"
 	},
 	"devDependencies": {
-		"@types/lodash": "^4.14.157",
+		"@types/lodash": "^4.14.158",
 		"@types/shimmer": "^1.0.1",
 		"del-cli": "^3.0.1",
 		"nativescript-dev-webpack": "^1.5.1",
 		"npm-run-all": "^4.1.5",
-		"tns-platform-declarations": "^6.5.11",
+		"tns-platform-declarations": "^6.5.12",
 		"typescript": "^3.9.7"
 	},
 	"license": "Unlicense",

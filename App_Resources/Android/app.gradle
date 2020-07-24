@@ -3,60 +3,60 @@ repositories {
 	google()
 	jcenter()
 	mavenCentral()
-	maven { url "https://jitpack.io" }
+	maven { url 'https://jitpack.io' }
 }
 
-project.ext.supportVersion = "28.+"
-project.ext.buildToolsVersion = "28.0.3"
-project.ext.compileSdk = "android-28"
-project.ext.targetSdk = "28"
+// project.ext.supportVersion = '28.+'
+// project.ext.buildToolsVersion = '28.0.3'
+// project.ext.compileSdk = 'android-28'
+// project.ext.targetSdk = '28'
 
 dependencies {
+	// def supportVer = project.getProperty('supportVersion')
+	// implementation 'com.android.support:appcompat-v7:$supportVer'
+	// implementation 'com.android.support:support-v4:$supportVer'
+	// implementation 'com.android.support:cardview-v7:$supportVer'
+	// implementation 'com.android.support:leanback-v17:$supportVer'
+	// implementation 'com.android.support:recyclerview-v7:$supportVer'
 
-	// def supportVer = project.getProperty("supportVersion")
-	// implementation "com.android.support:appcompat-v7:$supportVer"
-	// implementation "com.android.support:support-v4:$supportVer"
-	// implementation "com.android.support:cardview-v7:$supportVer"
-	// implementation "com.android.support:leanback-v17:$supportVer"
-	// implementation "com.android.support:recyclerview-v7:$supportVer"
+	// implementation 'org.protoojs.droid:protoo-client:+'
+	// implementation 'org.mediasoup.droid:mediasoup-client:+'
+	implementation 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+'
 
-	implementation "org.protoojs.droid:protoo-client:+"
-	implementation "org.mediasoup.droid:mediasoup-client:+"
-	implementation "com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+"
+	// implementation 'com.github.florent37:expectanim:+'
+	// implementation 'com.github.florent37:viewanimator:+'
+	// implementation 'com.google.android.exoplayer:exoplayer:+'
+	// implementation 'com.google.android.exoplayer:extension-okhttp:+'
+	// implementation 'com.squareup.okhttp3:okhttp:+'
+	// implementation 'com.squareup.picasso:picasso:+'
 
-	// implementation "com.github.florent37:expectanim:+"
-	// implementation "com.github.florent37:viewanimator:+"
-	// implementation "com.google.android.exoplayer:exoplayer:+"
-	// implementation "com.google.android.exoplayer:extension-okhttp:+"
-	// implementation "com.squareup.okhttp3:okhttp:+"
-	// implementation "com.squareup.picasso:picasso:+"
+	// implementation 'com.google.android.exoplayer:extension-leanback:+'
+	// implementation 'com.google.android.exoplayer:extension-cast:+'
+	// implementation 'com.github.ghost1372:Mzip-Android:+'
 
-	// implementation "com.google.android.exoplayer:extension-leanback:+"
-	// implementation "com.google.android.exoplayer:extension-cast:+"
-	// implementation "com.github.ghost1372:Mzip-Android:+"
-
-	// implementation "net.javaw:torrent-utils:+"
-	// implementation "com.frostwire:jlibtorrent:+"
-	// implementation "com.github.TorrentStream:TorrentStream-Android:+"
+	// implementation 'net.javaw:torrent-utils:+'
+	// implementation 'com.frostwire:jlibtorrent:+'
+	// implementation 'com.github.TorrentStream:TorrentStream-Android:+'
 	// implementation 'com.github.masterwok:simple-torrent-android:+'
-	// implementation "org.libtorrent4j:libtorrent4j:+"
-	// implementation "org.libtorrent4j:libtorrent4j-android-arm:+"
-	// implementation "org.libtorrent4j:libtorrent4j-android-arm64:+"
-	// implementation "org.libtorrent4j:libtorrent4j-android-x86:+"
-	// implementation "org.libtorrent4j:libtorrent4j-android-x86_64:+"
+	// implementation 'org.libtorrent4j:libtorrent4j:+'
+	// implementation 'org.libtorrent4j:libtorrent4j-android-arm:+'
+	// implementation 'org.libtorrent4j:libtorrent4j-android-arm64:+'
+	// implementation 'org.libtorrent4j:libtorrent4j-android-x86:+'
+	// implementation 'org.libtorrent4j:libtorrent4j-android-x86_64:+'
 
-	// implementation "nl.bravobit:android-ffmpeg:+"
-	// implementation "com.github.wseemann:FFmpegMediaMetadataRetriever:+"
-	// implementation "com.github.tsoumalis:FFmpeg-Android:+"
-	// implementation "com.github.samyakjain:FFmpeg-Android:+"
-	// implementation "com.github.brarcher:ffmpeg-android-java:+"
+	// implementation 'nl.bravobit:android-ffmpeg:+'
+	// implementation 'com.github.wseemann:FFmpegMediaMetadataRetriever:+'
+	// implementation 'com.github.tsoumalis:FFmpeg-Android:+'
+	// implementation 'com.github.samyakjain:FFmpeg-Android:+'
+	// implementation 'com.github.brarcher:ffmpeg-android-java:+'
 
 }
 
 android {
 	// compileSdkVersion 28
+	// buildToolsVersion '28.0.3'
 	defaultConfig {
-		// minSdkVersion 24
+		minSdkVersion 24
 		// targetSdkVersion 28
 		multiDexEnabled true
 		generatedDensities = []
@@ -66,16 +66,16 @@ android {
 		targetCompatibility JavaVersion.VERSION_1_8
 	}
 	aaptOptions {
-		additionalParameters "--no-version-vectors"
+		additionalParameters '--no-version-vectors'
 	}
 }
 
-println "████"
-println "████ getProperties -> " + project.getProperties()
-println "████ compileSdk -> " + project.getProperty("compileSdk")
-println "████ targetSdk -> " + project.getProperty("targetSdk")
-println "████ buildToolsVersion -> " + project.getProperty("buildToolsVersion")
-println "████ supportVersion -> " + project.getProperty("supportVersion")
-println "████ minSdkVersion -> " + android.defaultConfig.getProperty("minSdkVersion").mApiLevel
-println "████ android.compileOptions -> " + android.compileOptions.getProperties()
-println "████"
+// println '████'
+// // println '████ getProperties -> ' + project.getProperties()
+// println '████ compileSdk -> ' + project.getProperty('compileSdk')
+// println '████ targetSdk -> ' + project.getProperty('targetSdk')
+// println '████ buildToolsVersion -> ' + project.getProperty('buildToolsVersion')
+// // println '████ supportVersion -> ' + project.getProperty('supportVersion')
+// println '████ minSdkVersion -> ' + android.defaultConfig.getProperty('minSdkVersion').mApiLevel
+// println '████ android.compileOptions -> ' + android.compileOptions.getProperties()
+// println '████'
