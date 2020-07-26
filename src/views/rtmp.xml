@@ -1,0 +1,10 @@
+<Page
+	id="rtmp"
+	navigatingTo="navigatingTo"
+	navigatedTo="navigatedTo"
+>
+	<ActionBar title="Vindicam" />
+	<StackLayout>
+		<Button text="Connect" tap="{{ tapConnect }}" class="-primary" height="10%" />
+	</StackLayout>
+</Page>

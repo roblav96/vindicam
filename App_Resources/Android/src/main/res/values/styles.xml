@@ -11,7 +11,8 @@
 		<item name="android:windowTranslucentStatus">true</item>
 	</style>
 	<style name="LaunchScreenTheme" parent="LaunchScreenThemeBase">
-    </style>
+
+	</style>
 	<!-- theme to use AFTER launch screen is loaded-->
 	<style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
 		<item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
@@ -20,7 +21,8 @@
 		<item name="colorAccent">@color/ns_accent</item>
 	</style>
 	<style name="AppTheme" parent="AppThemeBase">
-    </style>
+
+	</style>
 	<!-- theme for action-bar -->
 	<style name="NativeScriptToolbarStyleBase" parent="Widget.AppCompat.Toolbar">
 		<item name="android:background">@color/ns_primary</item>
@@ -28,5 +30,6 @@
 		<item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
 	</style>
 	<style name="NativeScriptToolbarStyle" parent="NativeScriptToolbarStyleBase">
-    </style>
+
+	</style>
 </resources>
