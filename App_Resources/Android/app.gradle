@@ -12,20 +12,16 @@ repositories {
 // project.ext.targetSdk = '28'
 
 dependencies {
-	// def supportVer = project.getProperty('supportVersion')
-	// implementation 'com.android.support:appcompat-v7:$supportVer'
-	// implementation 'com.android.support:support-v4:$supportVer'
-	// implementation 'com.android.support:cardview-v7:$supportVer'
-	// implementation 'com.android.support:leanback-v17:$supportVer'
-	// implementation 'com.android.support:recyclerview-v7:$supportVer'
+	implementation 'androidx.appcompat:appcompat:1.1.+'
+	implementation 'com.google.android.material:material:1.1.+'
 
-	// implementation 'com.karumi:dexter:+'
-	// implementation 'com.afollestad.assent:core:+'
-	// implementation 'com.afollestad.assent:rationales:+'
+	implementation 'com.karumi:dexter:+'
+
+	implementation 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+'
+	// implementation 'com.github.takusemba:rtmppublisher:+'
 
 	// implementation 'org.protoojs.droid:protoo-client:+'
 	// implementation 'org.mediasoup.droid:mediasoup-client:+'
-	implementation 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+'
 
 	// implementation 'com.github.florent37:expectanim:+'
 	// implementation 'com.github.florent37:viewanimator:+'

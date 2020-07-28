@@ -7,6 +7,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -24,6 +25,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -43,6 +45,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -94,6 +97,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -154,6 +158,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -163,6 +168,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -178,6 +184,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -188,6 +195,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -199,6 +207,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -210,6 +219,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -221,6 +231,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -234,6 +245,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -245,6 +257,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -264,6 +277,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -283,6 +297,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -294,6 +309,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -305,6 +321,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -321,6 +338,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -334,6 +352,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -353,6 +372,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -369,6 +389,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -384,6 +405,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -398,6 +420,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -417,6 +440,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -430,6 +454,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -443,6 +468,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -459,6 +485,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -476,6 +503,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -508,6 +536,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -531,6 +560,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -560,6 +590,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -589,6 +620,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -606,6 +638,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -624,6 +657,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -657,6 +691,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -682,6 +717,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -712,6 +748,7 @@ declare module com {
 		}
 	}
 }
+
 declare module com {
 	export module karumi {
 		export module dexter {
@@ -742,3 +779,6 @@ declare module com {
 		}
 	}
 }
+
+//Generics information:
+
