@@ -12,6 +12,5 @@ export async function navigatedTo(args: NavigatedData) {
 export class RtmpPage extends Observable {
 	async tapConnect(args) {
 		console.log(`tapConnect ->`)
-
 	}
 }

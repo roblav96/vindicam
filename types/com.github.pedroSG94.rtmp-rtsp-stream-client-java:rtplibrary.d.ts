@@ -1,4 +1,3 @@
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -13,7 +12,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -33,7 +31,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -65,7 +62,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -100,7 +96,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -121,7 +116,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -143,7 +137,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -169,7 +162,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -185,7 +177,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -203,7 +194,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -222,7 +212,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -246,7 +235,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -271,7 +259,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -299,7 +286,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -326,7 +312,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -345,7 +330,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -377,7 +361,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -399,7 +382,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -415,7 +397,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -440,7 +421,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -462,7 +442,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -484,7 +463,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -508,7 +486,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -525,7 +502,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -551,7 +527,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -573,7 +548,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -595,7 +569,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -616,7 +589,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -685,7 +657,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -707,7 +678,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -729,7 +699,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -767,7 +736,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -815,7 +783,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -838,7 +805,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -855,7 +821,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module github {
 		export module faucamp {
@@ -878,7 +843,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -908,7 +872,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -924,7 +887,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -946,7 +908,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -970,7 +931,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -998,7 +958,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1020,7 +979,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1041,7 +999,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1057,7 +1014,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1079,7 +1035,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1113,7 +1068,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1132,7 +1086,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1148,7 +1101,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1176,7 +1128,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1198,7 +1149,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1220,7 +1170,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1245,7 +1194,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1267,7 +1215,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1289,7 +1236,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1311,7 +1257,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1336,7 +1281,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1352,7 +1296,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1385,7 +1328,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1410,7 +1352,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1441,7 +1382,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1464,7 +1404,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1488,7 +1427,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1515,7 +1453,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1537,7 +1474,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1565,7 +1501,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1600,7 +1535,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1622,7 +1556,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1644,7 +1577,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1666,7 +1598,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1692,7 +1623,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1716,7 +1646,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1740,7 +1669,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1764,7 +1692,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1792,7 +1719,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1816,7 +1742,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1848,7 +1773,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1870,7 +1794,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1892,7 +1815,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1916,7 +1838,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1938,7 +1859,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1962,7 +1882,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -1984,7 +1903,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2006,7 +1924,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2038,7 +1955,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2060,7 +1976,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2082,7 +1997,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2104,7 +2018,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2126,7 +2039,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2148,7 +2060,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2172,7 +2083,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2194,7 +2104,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2220,7 +2129,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2242,7 +2150,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2264,7 +2171,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2288,7 +2194,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2312,7 +2217,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2334,7 +2238,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2358,7 +2261,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2380,7 +2282,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2406,7 +2307,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2430,7 +2330,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2454,7 +2353,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2491,7 +2389,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2514,7 +2411,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2537,7 +2433,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2583,7 +2478,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2607,7 +2501,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2667,7 +2560,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2733,7 +2625,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2755,7 +2646,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2784,7 +2674,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2803,7 +2692,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2830,7 +2718,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2847,7 +2734,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2869,7 +2755,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2904,7 +2789,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2919,7 +2803,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2943,7 +2826,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2966,7 +2848,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -2988,7 +2869,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3006,7 +2886,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3027,7 +2906,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3049,7 +2927,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3075,7 +2952,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3138,7 +3014,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3154,7 +3029,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3175,7 +3049,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3198,7 +3071,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3219,7 +3091,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3244,7 +3115,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3267,7 +3137,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3289,7 +3158,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3319,7 +3187,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3345,7 +3212,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module encoder {
@@ -3387,7 +3253,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3403,7 +3268,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3506,7 +3370,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3613,7 +3476,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3692,7 +3554,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3773,7 +3634,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3820,7 +3680,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3852,7 +3711,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3870,7 +3728,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3903,7 +3760,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3919,7 +3775,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3935,7 +3790,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -3966,7 +3820,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4020,7 +3873,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4073,7 +3925,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4118,7 +3969,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4170,7 +4020,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4208,7 +4057,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4262,7 +4110,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4315,7 +4162,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4360,7 +4206,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4412,7 +4257,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4450,7 +4294,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4479,7 +4322,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4507,7 +4349,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4556,7 +4397,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4584,7 +4424,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4612,7 +4451,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4630,7 +4468,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4692,7 +4529,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4748,7 +4584,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4785,7 +4620,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4841,7 +4675,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4915,7 +4748,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtplibrary {
@@ -4935,7 +4767,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -4951,7 +4782,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -4971,7 +4801,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -4987,7 +4816,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5003,7 +4831,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5020,7 +4847,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5042,7 +4868,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5069,7 +4894,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5087,7 +4911,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5105,7 +4928,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5127,7 +4949,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5147,7 +4968,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5165,7 +4985,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5184,7 +5003,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5200,7 +5018,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5253,7 +5070,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5270,7 +5086,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5296,7 +5111,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5338,7 +5152,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5373,7 +5186,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5390,7 +5202,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5404,7 +5215,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5418,7 +5228,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5448,7 +5257,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5462,7 +5270,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5482,7 +5289,6 @@ declare module com {
 		}
 	}
 }
-
 declare module com {
 	export module pedro {
 		export module rtsp {
@@ -5503,7 +5309,6 @@ declare module com {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5515,7 +5320,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5531,7 +5335,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5559,7 +5362,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5571,7 +5373,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5584,7 +5385,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5611,7 +5411,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5748,7 +5547,6 @@ declare module net {
 		}
 	}
 }
-
 declare module net {
 	export module ossrs {
 		export module rtmp {
@@ -5767,6 +5565,3 @@ declare module net {
 		}
 	}
 }
-
-//Generics information:
-

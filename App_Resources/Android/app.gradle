@@ -19,6 +19,10 @@ dependencies {
 	// implementation 'com.android.support:leanback-v17:$supportVer'
 	// implementation 'com.android.support:recyclerview-v7:$supportVer'
 
+	// implementation 'com.karumi:dexter:+'
+	// implementation 'com.afollestad.assent:core:+'
+	// implementation 'com.afollestad.assent:rationales:+'
+
 	// implementation 'org.protoojs.droid:protoo-client:+'
 	// implementation 'org.mediasoup.droid:mediasoup-client:+'
 	implementation 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+'
