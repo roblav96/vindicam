@@ -11,6 +11,10 @@ declare class ASXML extends NSObject {
 	static alloc(): ASXML; // inherited from NSObject
 
 	static new(): ASXML; // inherited from NSObject
+
+	constructor(o: { data: string; });
+
+	initWithData(data: string): this;
 }
 
 declare class ASXMLDocument extends NSObject {
@@ -18,6 +22,10 @@ declare class ASXMLDocument extends NSObject {
 	static alloc(): ASXMLDocument; // inherited from NSObject
 
 	static new(): ASXMLDocument; // inherited from NSObject
+
+	constructor(o: { data: string; });
+
+	initWithData(data: string): this;
 }
 
 declare class AVRecorder extends NSObject {
@@ -25,6 +33,24 @@ declare class AVRecorder extends NSObject {
 	static alloc(): AVRecorder; // inherited from NSObject
 
 	static new(): AVRecorder; // inherited from NSObject
+
+	fileName: string;
+
+	readonly lockQueue: NSObject;
+
+	outputSettings: NSDictionary<string, NSDictionary<string, any>>;
+
+	pixelBufferAdaptor: AVAssetWriterInputPixelBufferAdaptor;
+
+	writer: AVAssetWriter;
+
+	writerInputs: NSDictionary<string, AVAssetWriterInput>;
+
+	static readonly defaultOutputSettings: NSDictionary<string, NSDictionary<string, any>>;
+
+	startRunning(): void;
+
+	stopRunning(): void;
 }
 
 declare class AudioEffect extends NSObject {
@@ -39,6 +65,14 @@ declare class DefaultAVRecorderDelegate extends NSObject {
 	static alloc(): DefaultAVRecorderDelegate; // inherited from NSObject
 
 	static new(): DefaultAVRecorderDelegate; // inherited from NSObject
+
+	dateFormat: string;
+
+	duration: number;
+
+	moviesDirectory: NSURL;
+
+	static readonly shared: DefaultAVRecorderDelegate;
 
 	didFinishWriting(recorder: AVRecorder): void;
 
@@ -71,6 +105,16 @@ declare class GLHKView extends GLKView implements GLKViewDelegate {
 
 	static new(): GLHKView; // inherited from NSObject
 
+	static setDefaultBackgroundColor(value: UIColor): void;
+
+	isMirrored: boolean;
+
+	readonly videoFormatDescription: any;
+
+	videoGravity: string;
+
+	static defaultBackgroundColor: UIColor;
+
 	readonly debugDescription: string; // inherited from NSObjectProtocol
 
 	readonly description: string; // inherited from NSObjectProtocol
@@ -82,6 +126,8 @@ declare class GLHKView extends GLKView implements GLKViewDelegate {
 	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
 	readonly  // inherited from NSObjectProtocol
+
+	attachStream(stream: NetStream): void;
 
 	class(): typeof NSObject;
 
@@ -128,7 +174,17 @@ declare class HKView extends UIView {
 
 	static new(): HKView; // inherited from NSObject
 
+	static setDefaultBackgroundColor(value: UIColor): void;
+
 	readonly layer: AVCaptureVideoPreviewLayer;
+
+	readonly videoFormatDescription: any;
+
+	videoGravity: string;
+
+	static defaultBackgroundColor: UIColor;
+
+	attachStream(stream: NetStream): void;
 }
 
 declare class HLSService extends HTTPService {
@@ -136,6 +192,10 @@ declare class HLSService extends HTTPService {
 	static alloc(): HLSService; // inherited from NSObject
 
 	static new(): HLSService; // inherited from NSObject
+
+	addHTTPStream(stream: HTTPStream): void;
+
+	removeHTTPStream(stream: HTTPStream): void;
 }
 
 declare class HTTPService extends NetService {
@@ -143,6 +203,12 @@ declare class HTTPService extends NetService {
 	static alloc(): HTTPService; // inherited from NSObject
 
 	static new(): HTTPService; // inherited from NSObject
+
+	static readonly defaultDocument: string;
+
+	static readonly defaultPort: number;
+
+	static readonly type: string;
 }
 
 declare class HTTPStream extends NetStream {
@@ -150,6 +216,8 @@ declare class HTTPStream extends NetStream {
 	static alloc(): HTTPStream; // inherited from NSObject
 
 	static new(): HTTPStream; // inherited from NSObject
+
+	publish(name: string): void;
 }
 
 declare var HaishinKitVersionNumber: number;
@@ -178,6 +246,12 @@ declare class MTHKView extends MTKView implements MTKViewDelegate {
 
 	static new(): MTHKView; // inherited from NSObject
 
+	isMirrored: boolean;
+
+	readonly videoFormatDescription: any;
+
+	videoGravity: string;
+
 	readonly debugDescription: string; // inherited from NSObjectProtocol
 
 	readonly description: string; // inherited from NSObjectProtocol
@@ -189,6 +263,8 @@ declare class MTHKView extends MTKView implements MTKViewDelegate {
 	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
 	readonly  // inherited from NSObjectProtocol
+
+	attachStream(stream: NetStream): void;
 
 	class(): typeof NSObject;
 
@@ -230,6 +306,18 @@ declare class NetService extends NSObject implements NSNetServiceDelegate {
 
 	static new(): NetService; // inherited from NSObject
 
+	readonly clients: NSArray<NetClient>;
+
+	readonly domain: string;
+
+	readonly name: string;
+
+	readonly port: number;
+
+	readonly txtData: NSData;
+
+	readonly type: string;
+
 	readonly debugDescription: string; // inherited from NSObjectProtocol
 
 	readonly description: string; // inherited from NSObjectProtocol
@@ -242,9 +330,13 @@ declare class NetService extends NSObject implements NSNetServiceDelegate {
 
 	readonly  // inherited from NSObjectProtocol
 
+	constructor(o: { domain: string; type: string; name: string; port: number; });
+
 	class(): typeof NSObject;
 
 	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+	initWithDomainTypeNamePort(domain: string, type: string, name: string, port: number): this;
 
 	isEqual(object: any): boolean;
 
@@ -281,6 +373,10 @@ declare class NetService extends NSObject implements NSNetServiceDelegate {
 	retainCount(): number;
 
 	self(): this;
+
+	startRunning(): void;
+
+	stopRunning(): void;
 }
 
 declare class NetSocket extends NSObject implements NSStreamDelegate {
@@ -288,6 +384,20 @@ declare class NetSocket extends NSObject implements NSStreamDelegate {
 	static alloc(): NetSocket; // inherited from NSObject
 
 	static new(): NetSocket; // inherited from NSObject
+
+	connected: boolean;
+
+	inputBuffer: NSData;
+
+	securityLevel: string;
+
+	timeout: number;
+
+	windowSizeC: number;
+
+	static readonly defaultTimeout: number;
+
+	static readonly defaultWindowSizeC: number;
 
 	readonly debugDescription: string; // inherited from NSObjectProtocol
 
@@ -303,13 +413,21 @@ declare class NetSocket extends NSObject implements NSStreamDelegate {
 
 	class(): typeof NSObject;
 
+	close(): void;
+
 	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+	connectWithNamePort(withName: string, port: number): void;
+
+	doOutputWithDataLocked(data: NSData, locked: interop.Pointer | interop.Reference<number>): number;
 
 	isEqual(object: any): boolean;
 
 	isKindOfClass(aClass: typeof NSObject): boolean;
 
 	isMemberOfClass(aClass: typeof NSObject): boolean;
+
+	listen(): void;
 
 	performSelector(aSelector: string): any;
 
@@ -331,6 +449,38 @@ declare class NetStream extends NSObject {
 	static alloc(): NetStream; // inherited from NSObject
 
 	static new(): NetStream; // inherited from NSObject
+
+	context: CIContext;
+
+	readonly lockQueue: NSObject;
+
+	orientation: AVCaptureVideoOrientation;
+
+	recorderSettings: NSDictionary<string, NSDictionary<string, any>>;
+
+	torch: boolean;
+
+	readonly zoomFactor: number;
+
+	appendSampleBufferWithTypeOptions(sampleBuffer: any, withType: string, options: NSDictionary<any, any>): void;
+
+	attachAudioAutomaticallyConfiguresApplicationAudioSessionOnError(audio: AVCaptureDevice, automaticallyConfiguresApplicationAudioSession: boolean, onError: (p1: NSError) => void): void;
+
+	attachCameraOnError(camera: AVCaptureDevice, onError: (p1: NSError) => void): void;
+
+	dispose(): void;
+
+	registerAudioEffect(effect: AudioEffect): boolean;
+
+	registerVideoEffect(effect: VideoEffect): boolean;
+
+	setPointOfInterestExposure(focus: CGPoint, exposure: CGPoint): void;
+
+	setZoomFactorRampingWithRate(zoomFactor: number, ramping: boolean, withRate: number): void;
+
+	unregisterAudioEffect(effect: AudioEffect): boolean;
+
+	unregisterVideoEffect(effect: VideoEffect): boolean;
 }
 
 declare class RTMPStream extends NetStream {
@@ -340,6 +490,22 @@ declare class RTMPStream extends NetStream {
 	static new(): RTMPStream; // inherited from NSObject
 
 	readonly currentFPS: number;
+
+	paused: boolean;
+
+	receiveAudio: boolean;
+
+	receiveVideo: boolean;
+
+	static readonly defaultAudioBitrate: number;
+
+	static readonly defaultVideoBitrate: number;
+
+	appendFileCompletionHandler(file: NSURL, completionHandler: () => void): void;
+
+	close(): void;
+
+	seek(offset: number): void;
 }
 
 declare class ScreenCaptureSession extends NSObject {
@@ -348,7 +514,29 @@ declare class ScreenCaptureSession extends NSObject {
 
 	static new(): ScreenCaptureSession; // inherited from NSObject
 
+	afterScreenUpdates: boolean;
+
+	readonly attributes: NSDictionary<string, NSObject>;
+
+	enabledScale: boolean;
+
+	frameInterval: number;
+
+	constructor(o: { shared: UIApplication; });
+
+	constructor(o: { viewToCapture: UIView; });
+
+	initWithShared(shared: UIApplication): this;
+
+	initWithViewToCapture(viewToCapture: UIView): this;
+
 	onScreen(displayLink: CADisplayLink): void;
+
+	onScreenProcess(displayLink: CADisplayLink): void;
+
+	startRunning(): void;
+
+	stopRunning(): void;
 }
 
 declare class VideoEffect extends NSObject {
@@ -356,4 +544,8 @@ declare class VideoEffect extends NSObject {
 	static alloc(): VideoEffect; // inherited from NSObject
 
 	static new(): VideoEffect; // inherited from NSObject
+
+	ciContext: CIContext;
+
+	executeInfo(image: CIImage, info: any): CIImage;
 }
