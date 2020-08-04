@@ -2,7 +2,7 @@ import * as application from '@nativescript/core/application'
 import * as Frame from '@nativescript/core/ui/frame'
 
 @JavaProxy('com.tns.background.RtpActivity')
-class RtpActivity extends androidx.appcompat.app.AppCompatActivity {
+export class RtpActivity extends androidx.appcompat.app.AppCompatActivity {
 
 	private _callbacks: Frame.AndroidActivityCallbacks
 	isNativeScriptActivity: boolean

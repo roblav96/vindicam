@@ -1,2 +1,2 @@
 export * from './delegate.android'
-// export * from './delegate.ios'
+export * from './delegate.ios'

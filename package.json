@@ -23,16 +23,24 @@
 	"dependencies": {
 		"@nativescript/core": "^6.5.12",
 		"@nativescript/theme": "^2.3.3",
+		"ansi-colors": "^4.1.1",
+		"browser-process-hrtime": "^1.0.0",
+		"dayjs": "^1.8.31",
+		"eyes": "^0.1.8",
 		"lodash-es": "^4.17.15",
 		"nativescript-android-utils": "^1.0.2",
 		"nativescript-videorecorder": "^3.0.0-beta.6",
-		"rambda": "^5.9.0",
-		"rambdax": "^3.7.0",
+		"rambda": "^5.11.0",
+		"rambdax": "^4.0.1",
 		"shimmer": "^1.2.1",
+		"stacktracey": "^2.0.14",
 		"string-fn": "^2.12.0",
-		"tns-core-modules": "^6.5.12"
+		"tns-core-modules": "^6.5.12",
+		"util": "^0.12.3",
+		"util-inspect": "^0.1.8"
 	},
 	"devDependencies": {
+		"@types/eyes": "^0.1.31",
 		"@types/lodash": "^4.14.158",
 		"@types/shimmer": "^1.0.1",
 		"del-cli": "^3.0.1",
