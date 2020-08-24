@@ -2,7 +2,7 @@ import * as fs from '@nativescript/core/file-system'
 Object.assign(global, {
 	process: {
 		argv: [''],
-		version: 'v14.7.0',
+		version: 'v12.18.3',
 		env: {},
 		cwd() {
 			return fs.knownFolders.currentApp().path

@@ -11,7 +11,7 @@ export function navigatingTo(args: NavigatedData) {
 
 export async function navigatedTo(args: NavigatedData) {}
 
-const ENDPOINT = `rtmp://192.168.1.12:1935/live/test`
+const ENDPOINT = `rtmp://192.168.2.43:1935/live/test`
 
 export class RtmpPage extends Observable {
 	async tapConnect(args) {
