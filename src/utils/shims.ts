@@ -7,7 +7,6 @@ Object.assign(global, {
 		cwd() {
 			return fs.knownFolders.currentApp().path
 		},
-		// hrtime: require('browser-process-hrtime'),
 		nextTick(fn, ...args) {
 			return setTimeout(fn as any, 25, ...args)
 		},
