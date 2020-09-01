@@ -1,0 +1,6 @@
+<Page id="landing_page" navigatingTo="navigatingTo" navigatedTo="navigatedTo">
+	<ActionBar title="VindiCam - Landing" />
+	<StackLayout>
+		<Button text="Permissions" tap="tapPermissions" class="-primary" />
+	</StackLayout>
+</Page>

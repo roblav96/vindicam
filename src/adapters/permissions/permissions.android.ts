@@ -1,12 +1,14 @@
 export * from './permissions.common'
-import * as application from '@nativescript/core/application'
+import * as Application from '@nativescript/core/application'
 import * as permissions from './permissions.common'
 import * as utils from '@nativescript/core/utils/utils'
 
 export async function ensurePermissions() {
 	return new Promise<boolean>((resolve, reject) => {
-		let activity = application.android
-			.foregroundActivity as androidx.appcompat.app.AppCompatActivity
+		let [nativeApp, activity] = [
+			Application.android.nativeApp as android.app.Application,
+			Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
+		]
 		com.karumi.dexter.Dexter.withContext(activity)
 			.withPermissions(
 				utils.ad.collections.stringArrayToStringSet([
@@ -22,8 +24,8 @@ export async function ensurePermissions() {
 						console.log(report.getGrantedPermissionResponses())
 					},
 					onPermissionRationaleShouldBeShown(permissions, token) {
-						console.warn(`onPermissionRationaleShouldBeShown ->`)
-						console.log(`permissions ->`, permissions)
+						console.warn('onPermissionRationaleShouldBeShown ->')
+						console.log('permissions ->', permissions)
 						console.log('token ->', token)
 						token.continuePermissionRequest()
 					},
@@ -47,8 +49,10 @@ const Requests = {
 } as Record<keyof typeof permissions.Requests, string[]>
 
 export async function hasPermissions(request: permissions.Requests) {
-	let activity = application.android
-		.foregroundActivity as androidx.appcompat.app.AppCompatActivity
+	let [nativeApp, activity] = [
+		Application.android.nativeApp as android.app.Application,
+		Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
+	]
 	// let dexter = com.karumi.dexter.Dexter.withContext(application.android.context)
 	// console.log('dexter ->', dexter)
 	console.log('permissions.Requests[request] ->', permissions.Requests[request])
@@ -73,4 +77,4 @@ export async function hasPermissions(request: permissions.Requests) {
 		.check()
 }
 
-application.android.on('activityRequestPermissions', function activityRequestPermissions(args) {})
+Application.android.on('activityRequestPermissions', function activityRequestPermissions(args) {})

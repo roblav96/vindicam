@@ -12,8 +12,9 @@ repositories {
 // project.ext.targetSdk = '28'
 
 dependencies {
-	implementation 'androidx.appcompat:appcompat:1.1.+'
-	implementation 'com.google.android.material:material:1.1.+'
+	implementation 'androidx.appcompat:appcompat:1.2.+'
+	implementation 'androidx.legacy:legacy-support-v4:1.+'
+	implementation 'com.google.android.material:material:1.2.+'
 
 	implementation 'com.karumi:dexter:+'
 
@@ -56,10 +57,19 @@ android {
 	// compileSdkVersion 28
 	// buildToolsVersion '28.0.3'
 	defaultConfig {
+		applicationId = 'app.vindicam'
 		minSdkVersion 24
 		// targetSdkVersion 28
 		multiDexEnabled true
 		generatedDensities = []
+	}
+	buildTypes {
+		debug {
+			resValue 'string', 'app_name', '[DEV] VindiCam'
+		}
+		release {
+			resValue 'string', 'app_name', 'VindiCam'
+		}
 	}
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8
@@ -70,16 +80,16 @@ android {
 	}
 }
 
-println '████'
-println '████ project -> ' + project.getProperties()
-println '████'
-println '████ compileSdk -> ' + project.getProperty('compileSdk')
-println '████ targetSdk -> ' + project.getProperty('targetSdk')
-println '████ buildToolsVersion -> ' + project.getProperty('buildToolsVersion')
-println '████'
-println '████ android -> ' + android.getProperties()
-println '████'
-println '████ minSdkVersion -> ' + android.defaultConfig.getProperty('minSdkVersion').mApiLevel
-println '████'
-println '████ android.compileOptions -> ' + android.compileOptions.getProperties()
-println '████'
+// println '████'
+// println '████ project -> ' + project.getProperties()
+// println '████'
+// println '████ compileSdk -> ' + project.getProperty('compileSdk')
+// println '████ targetSdk -> ' + project.getProperty('targetSdk')
+// println '████ buildToolsVersion -> ' + project.getProperty('buildToolsVersion')
+// println '████'
+// println '████ android -> ' + android.getProperties()
+// println '████'
+// println '████ minSdkVersion -> ' + android.defaultConfig.getProperty('minSdkVersion').mApiLevel
+// println '████'
+// println '████ android.compileOptions -> ' + android.compileOptions.getProperties()
+// println '████'

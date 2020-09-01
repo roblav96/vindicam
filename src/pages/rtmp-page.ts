@@ -1,8 +1,7 @@
 import * as Application from '@nativescript/core/application'
-import * as permissions from '~/adapters/permissions/permissions'
 import * as Placeholder from '@nativescript/core/ui/placeholder'
 import { Observable, EventData, Page, NavigatedData } from '@nativescript/core'
-import { RtpService } from '~/background/RtpService'
+import { RtpService } from '~/android/RtpService'
 
 export function navigatingTo(args: NavigatedData) {
 	let page = args.object as Page
@@ -15,26 +14,20 @@ const ENDPOINT = `rtmp://192.168.2.43:1935/live/test`
 
 export class RtmpPage extends Observable {
 	async tapConnect(args) {
-		console.log(`tapConnect ->`)
-		await permissions.ensurePermissions()
-		let activity = Application.android
-			.foregroundActivity as androidx.appcompat.app.AppCompatActivity
-		let nativeApp = Application.android.nativeApp as android.app.Application
+		console.log('tapConnect ->')
+		let [nativeApp, activity] = [
+			Application.android.nativeApp as android.app.Application,
+			Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
+		]
 		let intent = new android.content.Intent(nativeApp, RtpService.class)
 		intent.putExtra('endpoint', ENDPOINT)
 		activity.startForegroundService(intent)
 		await new Promise((r) => setTimeout(r, 1000))
-		let service = activity.getSystemServiceName(RtpService.class)
-		console.log('service ->', service)
-		// let manager = activity.getSystemService(
-		// 	android.content.Context.ACTIVITY_SERVICE,
-		// ) as android.app.ActivityManager
-		// let services = manager.getRunningServices(java.lang.Integer.MAX_VALUE)
-		// console.log('services ->', services)
 	}
 }
 
 export function creatingView(args: Placeholder.CreateViewEventData) {
+	RtpService.contextApp = Application.android.foregroundActivity
 	let nativeView = new com.pedro.rtplibrary.view.OpenGlView(args.context)
 	nativeView.setLayoutParams(
 		new android.widget.LinearLayout.LayoutParams(
@@ -42,8 +35,18 @@ export function creatingView(args: Placeholder.CreateViewEventData) {
 			android.view.WindowManager.LayoutParams.MATCH_PARENT,
 		),
 	)
-	// nativeView.getHolder().addCallback(new android.view.SurfaceHolder.Callback({
-
-	// }))
+	nativeView.getHolder().addCallback(
+		new android.view.SurfaceHolder.Callback({
+			surfaceChanged(holder) {
+				console.log('surfaceChanged holder ->', holder)
+			},
+			surfaceCreated(holder) {
+				console.log('surfaceCreated holder ->', holder)
+			},
+			surfaceDestroyed(holder) {
+				console.log('surfaceDestroyed holder ->', holder)
+			},
+		}),
+	)
 	args.view = nativeView
 }

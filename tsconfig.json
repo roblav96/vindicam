@@ -16,5 +16,5 @@
 		"types/**/*.d.ts",
 		"src/**/*.ts"
 	],
-	"exclude": ["App_Resources", "platforms"]
+	"exclude": ["App_Resources", "hooks", "platforms"]
 }

@@ -1,8 +1,29 @@
-import * as application from '@nativescript/core/application'
-import * as utils from '@nativescript/core/utils/utils'
+import * as Application from '@nativescript/core/application'
+import * as Utils from '@nativescript/core/utils/utils'
 
-@JavaProxy('com.tns.background.RtpService')
+function isServiceRunning() {
+	console.log('isServiceRunning ->')
+	let [activity] = [
+		Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
+	]
+	let manager = activity.getSystemService(
+		android.content.Context.ACTIVITY_SERVICE,
+	) as android.app.ActivityManager
+	let services = manager.getRunningServices(java.lang.Integer.MAX_VALUE)
+	for (let i = 0; i < services.size(); i++) {
+		let service = services.get(i) as android.app.ActivityManager.RunningServiceInfo
+		if (service.service.getClassName() == 'com.tns.android.RtpService') {
+			return true
+		}
+	}
+}
+
+@JavaProxy('com.tns.android.RtpService')
 export class RtpService extends androidx.core.app.JobIntentService {
+	static camera2Base: com.pedro.rtplibrary.base.Camera2Base
+	static openGlView: com.pedro.rtplibrary.view.OpenGlView
+	static contextApp: androidx.appcompat.app.AppCompatActivity
+
 	constructor() {
 		super()
 		return global.__native(this)
@@ -16,9 +37,10 @@ export class RtpService extends androidx.core.app.JobIntentService {
 	onCreate() {
 		super.onCreate()
 		console.log('onCreate ->')
+		console.log('RtpService.contextApp ->', RtpService.contextApp)
 		this.channelId = 'rtpStreamChannel'
 		this.notifyId = 123456
-		// let context = utils.ad.getApplicationContext() as android.content.Context
+		// let context = Utils.ad.getApplicationContext() as android.content.Context
 		this.notificationManager = this.getSystemService(android.app.NotificationManager.class)
 		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 			this.notificationManager.createNotificationChannel(
@@ -34,7 +56,7 @@ export class RtpService extends androidx.core.app.JobIntentService {
 				this,
 				this.channelId,
 			)
-			console.log(`notification ->`, notification)
+			console.log('notification ->', notification)
 			notification.setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
 			notification.setOngoing(true)
 			notification.setContentTitle('')
@@ -57,17 +79,17 @@ export class RtpService extends androidx.core.app.JobIntentService {
 		console.log('onBind ->', intent)
 		return null
 	}
+	onUnbind(intent: android.content.Intent) {
+		console.log('onUnbind ->', intent)
+		return null
+	}
 
 	onDestroy() {
 		super.onDestroy()
 		console.log('onDestroy ->')
 	}
 
-	prepareStreamRtp() {
+	prepareStreamRtp() {}
 
-	}
-
-	startStreamRtp(endpoint: string) {
-
-	}
+	startStreamRtp(endpoint: string) {}
 }

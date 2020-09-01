@@ -1,3 +1,35 @@
+declare const globalThis: any
+
+globalThis.Promise = require('bluebird/js/browser/bluebird.core')
+globalThis.Promise.onPossiblyUnhandledRejection((error: Error) => {
+	console.error('████  UNHANDLED REJECTION  ████ ->', error)
+})
+
+import * as Trace from '@nativescript/core/trace'
+Trace.setErrorHandler({
+	handlerError(error) {
+		console.error('████  TRACE HANDLER ERROR  ████ ->', error)
+	}
+})
+// Trace.setCategories(Trace.categories.All)
+// Trace.enable()
+
+import * as Application from '@nativescript/core/application'
+Application.on('uncaughtError', (args) =>
+	console.error('████  UNCAUGHT ERROR  ████ ->', args.error),
+)
+Application.on('discardedError', (args) =>
+	console.error('████  DISCARDED ERROR  ████ ->', args.error),
+)
+Object.assign(Application, {
+	addResources(resources: any) {
+		Application.setResources(Object.assign(Application.getResources(), resources))
+	},
+})
+declare module '@nativescript/core/application' {
+	export function addResources(resources: any): void; // prettier-ignore
+}
+
 import * as fs from '@nativescript/core/file-system'
 Object.assign(global, {
 	process: {
@@ -18,12 +50,5 @@ import * as dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
 
-import * as Application from '@nativescript/core/application'
-Object.assign(Application, {
-	addResources(resources: any) {
-		Application.setResources(Object.assign(Application.getResources(), resources))
-	},
-})
-declare module '@nativescript/core/application' {
-	export function addResources(resources: any): void
-}
+// import * as Profiling from '@nativescript/core/profiling'
+// console.log('Profiling.time() ->', Profiling.time())
