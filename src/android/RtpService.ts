@@ -20,6 +20,7 @@ function isServiceRunning() {
 
 @JavaProxy('com.tns.android.RtpService')
 export class RtpService extends androidx.core.app.JobIntentService {
+	static lolwut = 'lolwut mate'
 	static camera2Base: com.pedro.rtplibrary.base.Camera2Base
 	static openGlView: com.pedro.rtplibrary.view.OpenGlView
 	static contextApp: androidx.appcompat.app.AppCompatActivity
@@ -37,11 +38,11 @@ export class RtpService extends androidx.core.app.JobIntentService {
 	onCreate() {
 		super.onCreate()
 		console.log('onCreate ->')
-		console.log('RtpService.contextApp ->', RtpService.contextApp)
+		console.log('RtpService.lolwut ->', RtpService.lolwut)
 		this.channelId = 'rtpStreamChannel'
 		this.notifyId = 123456
 		// let context = Utils.ad.getApplicationContext() as android.content.Context
-		this.notificationManager = this.getSystemService(android.app.NotificationManager.class)
+		this.notificationManager = this.getSystemService(android.content.Context.NOTIFICATION_SERVICE)
 		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 			this.notificationManager.createNotificationChannel(
 				new android.app.NotificationChannel(

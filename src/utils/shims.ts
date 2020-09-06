@@ -1,15 +1,18 @@
-declare const globalThis: any
-
 globalThis.Promise = require('bluebird/js/browser/bluebird.core')
-globalThis.Promise.onPossiblyUnhandledRejection((error: Error) => {
-	console.error('████  UNHANDLED REJECTION  ████ ->', error)
+globalThis.Promise.onPossiblyUnhandledRejection((reason) => {
+	console.error('████  UNHANDLED REJECTION  ████ ->', reason)
 })
+declare global {
+	export interface PromiseConstructor {
+		onPossiblyUnhandledRejection(handler: (reason: Error) => any): void
+	}
+}
 
 import * as Trace from '@nativescript/core/trace'
 Trace.setErrorHandler({
 	handlerError(error) {
 		console.error('████  TRACE HANDLER ERROR  ████ ->', error)
-	}
+	},
 })
 // Trace.setCategories(Trace.categories.All)
 // Trace.enable()
@@ -31,7 +34,7 @@ declare module '@nativescript/core/application' {
 }
 
 import * as fs from '@nativescript/core/file-system'
-Object.assign(global, {
+Object.assign(globalThis, {
 	process: {
 		argv: [''],
 		version: 'v12.18.3',
@@ -44,7 +47,7 @@ Object.assign(global, {
 		},
 	} as Partial<NodeJS.Process>,
 })
-global.process.hrtime = require('browser-process-hrtime')
+globalThis.process.hrtime = require('browser-process-hrtime')
 
 import * as dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'

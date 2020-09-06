@@ -19,34 +19,11 @@ export class RtmpPage extends Observable {
 			Application.android.nativeApp as android.app.Application,
 			Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
 		]
+		RtpService.lolwut = 'oh yes lolwut'
+		console.log('█ RtpService.lolwut ->', RtpService.lolwut)
 		let intent = new android.content.Intent(nativeApp, RtpService.class)
 		intent.putExtra('endpoint', ENDPOINT)
 		activity.startForegroundService(intent)
 		await new Promise((r) => setTimeout(r, 1000))
 	}
-}
-
-export function creatingView(args: Placeholder.CreateViewEventData) {
-	RtpService.contextApp = Application.android.foregroundActivity
-	let nativeView = new com.pedro.rtplibrary.view.OpenGlView(args.context)
-	nativeView.setLayoutParams(
-		new android.widget.LinearLayout.LayoutParams(
-			android.view.WindowManager.LayoutParams.MATCH_PARENT,
-			android.view.WindowManager.LayoutParams.MATCH_PARENT,
-		),
-	)
-	nativeView.getHolder().addCallback(
-		new android.view.SurfaceHolder.Callback({
-			surfaceChanged(holder) {
-				console.log('surfaceChanged holder ->', holder)
-			},
-			surfaceCreated(holder) {
-				console.log('surfaceCreated holder ->', holder)
-			},
-			surfaceDestroyed(holder) {
-				console.log('surfaceDestroyed holder ->', holder)
-			},
-		}),
-	)
-	args.view = nativeView
 }
