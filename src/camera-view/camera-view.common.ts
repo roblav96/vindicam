@@ -1,4 +1,1 @@
-
-export abstract class CameraViewBase {
-
-}
+export abstract class CameraViewBase {}

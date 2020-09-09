@@ -1,8 +1,5 @@
-
 export enum Requests {
-	'CAMERA'
+	'CAMERA',
 }
 
-export abstract class Permissions {
-
-}
+export abstract class Permissions {}
