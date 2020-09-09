@@ -17,7 +17,6 @@
 		"@nativescript/core": "^7.0.0",
 		"@nativescript/theme": "^2.3.3",
 		"ansi-colors": "^4.1.1",
-		"bluebird": "^3.7.2",
 		"dayjs": "^1.8.35",
 		"lodash-es": "^4.17.15",
 		"rambda": "^6.1.0",
