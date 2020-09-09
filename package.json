@@ -1,59 +1,45 @@
 {
-	"name": "VindiCam",
+	"name": "vindicam",
 	"version": "0.0.1",
 	"description": "Vindicate yourself with a live video recording saved to remote storage",
-	"nativescript": {
-		"id": "app.vindicam",
-		"tns-android": {
-			"version": "6.5.3"
-		},
-		"tns-ios": {
-			"version": "6.5.2"
-		}
-	},
+	"main": "main.js",
 	"scripts": {
 		"au": "adb uninstall app.vindicam || true",
 		"auall": "adb shell pm list packages -3 | sd '^package:' '' | while read i; do echo $i && adb uninstall $i; done",
 		"iu": "ideviceinstaller --uninstall app.vindicam || true",
-		"xcode": "tns prepare ios && open platforms/ios/vindicam.xcworkspace",
+		"xcode": "ns prepare ios && open platforms/ios/vindicam.xcworkspace",
 		"del": "del hooks node_modules platforms",
 		"delp": "del platforms",
 		"postinstall": "run-p postinstall:*",
-		"postinstall:update-ns-webpack": "update-ns-webpack --configs"
+		"postinstall:update-ns-webpack": "cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js ."
 	},
 	"dependencies": {
 		"@nativescript/core": "^7.0.0",
 		"@nativescript/theme": "^2.3.3",
 		"ansi-colors": "^4.1.1",
 		"bluebird": "^3.7.2",
-		"browser-process-hrtime": "^1.0.0",
 		"dayjs": "^1.8.35",
-		"eyes": "^0.1.8",
 		"lodash-es": "^4.17.15",
-		"rambda": "^5.13.1",
-		"rambdax": "^5.1.0",
+		"rambda": "^6.1.0",
+		"rambdax": "^6.1.0",
 		"shimmer": "^1.2.1",
-		"stacktracey": "^2.0.14",
-		"string-fn": "^2.12.2",
-		"tns-core-modules": "^6.5.16",
-		"util": "^0.12.3",
-		"util-inspect": "^0.1.8"
+		"string-fn": "^2.12.2"
 	},
 	"devDependencies": {
-		"@types/bluebird": "^3.5.32",
-		"@types/eyes": "^0.1.31",
+		"@nativescript/android": "7.0.0",
+		"@nativescript/ios": "7.0.0",
+		"@nativescript/types": "^7.0.1",
+		"@nativescript/webpack": "^3.0.3",
 		"@types/lodash": "^4.14.161",
 		"@types/shimmer": "^1.0.1",
+		"cpy-cli": "^3.1.1",
 		"del-cli": "^3.0.1",
-		"nativescript-dev-webpack": "^1.5.1",
 		"npm-run-all": "^4.1.5",
-		"tns-android": "6.5.3",
-		"tns-platform-declarations": "^6.5.15",
 		"typescript": "^4.0.2"
 	},
-	"license": "Unlicense",
 	"author": "Robert Laverty <roblav96@gmail.com> (https://github.com/roblav96)",
+	"bugs": "https://github.com/roblav96/vindicam/issues",
 	"homepage": "https://github.com/roblav96/vindicam#readme",
-	"repository": "github:roblav96/vindicam",
-	"bugs": "https://github.com/roblav96/vindicam/issues"
+	"license": "Unlicense",
+	"repository": "github:roblav96/vindicam"
 }

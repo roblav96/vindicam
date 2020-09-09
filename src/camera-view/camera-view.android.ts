@@ -1,6 +1,6 @@
+import * as RtpService from '~/android/RtpService'
 import * as View from '@nativescript/core/ui/core/view'
 import { CameraViewBase } from './camera-view.common'
-import { RtpService } from '~/android/RtpService'
 
 // export class CameraView extends CameraViewBase {
 
@@ -36,9 +36,10 @@ export class CameraView extends View.View {
 				},
 			}),
 		)
+		console.log('CameraView RtpService ->', RtpService.isServiceRunning)
 	}
 	disposeNativeView() {
-		this.nativeView.getHolder().removeCallback()
+		// this.nativeView.getHolder().removeCallback()
 		super.disposeNativeView()
 	}
 }

@@ -1,4 +1,9 @@
-<Page id="rtmp_page" navigatingTo="navigatingTo" navigatedTo="navigatedTo" xmlns:CameraView="camera-view/camera-view">
+<Page
+	id="rtmp_page"
+	navigatingTo="navigatingTo"
+	navigatedTo="navigatedTo"
+	xmlns:CameraView="camera-view/camera-view"
+>
 	<ActionBar title="Vindicam - Rtmp" />
 	<StackLayout>
 		<Button text="Connect" tap="{{ tapConnect }}" class="-primary" height="10%" />

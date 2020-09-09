@@ -1,6 +1,6 @@
 // import * as _ from 'lodash-es'
 // import * as ansi from 'ansi-colors'
-// import * as application from '@nativescript/core/application'
+// import * as Application from '@nativescript/core/application'
 // import * as dayjs from 'dayjs'
 // import * as eyes from 'eyes'
 // import * as platform from '@nativescript/core/platform'
@@ -8,6 +8,9 @@
 // import * as StackTracey from 'stacktracey'
 // import * as types from '@nativescript/core/utils/types'
 // import * as util from 'util'
+
+// import * as Profiling from '@nativescript/core/profiling'
+// console.log('Profiling.time() ->', Profiling.time())
 
 // console.log(`StackTracey ->`, StackTracey)
 

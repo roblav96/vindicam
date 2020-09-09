@@ -1,7 +1,7 @@
 import * as Application from '@nativescript/core/application'
 import * as Utils from '@nativescript/core/utils/utils'
 
-function isServiceRunning() {
+export function isServiceRunning() {
 	console.log('isServiceRunning ->')
 	let [activity] = [
 		Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
@@ -18,15 +18,15 @@ function isServiceRunning() {
 	}
 }
 
-@JavaProxy('com.tns.android.RtpService')
+@NativeClass({ nativeClassName: 'com.tns.android.RtpService' })
 export class RtpService extends androidx.core.app.JobIntentService {
-	static lolwut = 'lolwut mate'
+	static LOLWUT = 'lol wut'
 	static camera2Base: com.pedro.rtplibrary.base.Camera2Base
 	static openGlView: com.pedro.rtplibrary.view.OpenGlView
 	static contextApp: androidx.appcompat.app.AppCompatActivity
 
-	constructor() {
-		super()
+	constructor(context: android.content.Context) {
+		super(context)
 		return global.__native(this)
 	}
 
@@ -38,11 +38,13 @@ export class RtpService extends androidx.core.app.JobIntentService {
 	onCreate() {
 		super.onCreate()
 		console.log('onCreate ->')
-		console.log('RtpService.lolwut ->', RtpService.lolwut)
+		console.log('RtpService.LOLWUT ->', RtpService.LOLWUT)
 		this.channelId = 'rtpStreamChannel'
 		this.notifyId = 123456
 		// let context = Utils.ad.getApplicationContext() as android.content.Context
-		this.notificationManager = this.getSystemService(android.content.Context.NOTIFICATION_SERVICE)
+		this.notificationManager = this.getSystemService(
+			android.content.Context.NOTIFICATION_SERVICE,
+		)
 		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 			this.notificationManager.createNotificationChannel(
 				new android.app.NotificationChannel(

@@ -19,11 +19,17 @@ export class RtmpPage extends Observable {
 			Application.android.nativeApp as android.app.Application,
 			Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
 		]
-		RtpService.lolwut = 'oh yes lolwut'
-		console.log('█ RtpService.lolwut ->', RtpService.lolwut)
-		let intent = new android.content.Intent(nativeApp, RtpService.class)
-		intent.putExtra('endpoint', ENDPOINT)
-		activity.startForegroundService(intent)
-		await new Promise((r) => setTimeout(r, 1000))
+		console.log('RtpService ->', RtpService)
+		try {
+			throw new Error('DEVELOPMENT')
+			RtpService.LOLWUT = 'RtpService.LOLWUT = lol wut'
+			console.log('█ RtpService.LOLWUT ->', RtpService.LOLWUT)
+			let intent = new android.content.Intent(nativeApp, RtpService.class)
+			intent.putExtra('endpoint', ENDPOINT)
+			activity.startForegroundService(intent)
+			await new Promise((r) => setTimeout(r, 1000))
+		} catch (error) {
+			console.error(' -> %O', error)
+		}
 	}
 }

@@ -4,15 +4,16 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"lib": ["esnext"],
-		"module": "commonjs",
+		"module": "esnext",
+		"moduleResolution": "node",
 		"noEmitHelpers": true,
 		"paths": { "~/*": ["src/*"] },
 		"skipLibCheck": true,
-		"target": "es5"
+		"target": "es2017"
 	},
 	"include": [
-		"node_modules/tns-platform-declarations/android-29.d.ts",
-		"node_modules/tns-platform-declarations/ios.d.ts",
+		"node_modules/@nativescript/types-android/lib/android-29.d.ts",
+		"node_modules/@nativescript/types-ios/lib/ios/ios.d.ts",
 		"types/**/*.d.ts",
 		"src/**/*.ts"
 	],

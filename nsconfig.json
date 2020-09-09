@@ -1,6 +1,0 @@
-{
-	"appPath": "src",
-	"appResourcesPath": "App_Resources",
-	"overridePods": true,
-	"webpackConfigPath": "custom.webpack.config.js"
-}
