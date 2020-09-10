@@ -1,5 +1,5 @@
 const path = require('path')
-const WebpackConfig = require('./webpack.typescript.js')
+const WebpackConfig = require('./webpack.config.js')
 
 module.exports = (env) => {
 	env = env || {}

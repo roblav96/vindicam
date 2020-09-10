@@ -4,14 +4,15 @@
 	"description": "Vindicate yourself with a live video recording saved to remote storage",
 	"main": "main.js",
 	"scripts": {
+		"a": "ns run android --no-hmr",
 		"au": "adb uninstall app.vindicam || true",
-		"auall": "adb shell pm list packages -3 | sd '^package:' '' | while read i; do echo $i && adb uninstall $i; done",
+		"i": "ns run ios --no-hmr",
 		"iu": "ideviceinstaller --uninstall app.vindicam || true",
 		"xcode": "ns prepare ios && open platforms/ios/vindicam.xcworkspace",
 		"del": "del hooks node_modules platforms",
 		"delp": "del platforms",
 		"postinstall": "run-p postinstall:*",
-		"postinstall:update-ns-webpack": "cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js ."
+		"postinstall:update-ns-webpack": "cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js webpack.config.js"
 	},
 	"dependencies": {
 		"@nativescript/core": "^7.0.0",

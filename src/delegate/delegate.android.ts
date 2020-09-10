@@ -6,6 +6,6 @@ Application.android.on('activityCreated', function activityCreated(args) {
 	)
 })
 
-Application.android.on('activityNewIntent', function activityNewIntent(args) {
-	console.log('activityNewIntent ->', args)
-})
+// Application.android.on('activityNewIntent', function activityNewIntent(args) {
+// 	console.log('activityNewIntent ->', args)
+// })

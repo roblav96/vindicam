@@ -6,8 +6,13 @@ export default {
 	id: 'app.vindicam',
 	webpackConfigPath: 'webpack.config.js',
 	android: {
-		v8Flags: '--expose_gc',
+		discardUncaughtJsExceptions: false,
 		markingMode: 'none',
 		maxLogcatObjectSize: 1048576,
+		suppressCallJSMethodExceptions: false,
+		v8Flags: '--expose_gc',
+	},
+	ios: {
+		discardUncaughtJsExceptions: false,
 	},
 } as NativeScriptConfig
