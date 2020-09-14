@@ -1,8 +1,7 @@
 /hooks
 /node_modules
 /platforms
-/webpack.config.js
-/webpack.typescript.js
+/webpack.*.js
 
 *.keystore
 *.log
