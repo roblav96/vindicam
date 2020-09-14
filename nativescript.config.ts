@@ -4,6 +4,7 @@ export default {
 	appPath: 'src',
 	appResourcesPath: 'App_Resources',
 	id: 'app.vindicam',
+	overridePods: 'App_Resources/iOS/Podfile',
 	webpackConfigPath: 'webpack.config.js',
 	android: {
 		discardUncaughtJsExceptions: false,

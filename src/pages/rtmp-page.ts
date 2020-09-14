@@ -25,7 +25,7 @@ export class RtmpPage extends Observable {
 			intent.putExtra('endpoint', ENDPOINT)
 			activity.startForegroundService(intent)
 			await new Promise((r) => setTimeout(r, 1000))
-			isServiceRunning()
+			console.log('isServiceRunning() ->', isServiceRunning())
 		} catch (error) {
 			console.error('[error] tapConnect -> %O', error)
 		}

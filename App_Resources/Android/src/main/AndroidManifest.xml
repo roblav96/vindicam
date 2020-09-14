@@ -45,10 +45,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="com.tns.ErrorReportActivity" />
-		<service
-			android:enabled="true"
-			android:exported="false"
-			android:name="com.tns.android.RtpService"
-		/>
+		<service android:name="com.tns.android.RtpService" android:exported="false" />
 	</application>
 </manifest>

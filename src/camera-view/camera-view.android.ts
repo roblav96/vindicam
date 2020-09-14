@@ -1,7 +1,7 @@
 import * as Application from '@nativescript/core/application'
+import * as RtpService from '~/android/RtpService'
 import * as View from '@nativescript/core/ui/core/view'
 import { CameraViewBase } from './camera-view.common'
-import { isServiceRunning, RtpServiceClass, init } from '~/android/RtpService'
 
 // export class CameraView extends CameraViewBase {
 
@@ -26,9 +26,6 @@ export class CameraView extends View.View {
 		let [activity] = [
 			Application.android.foregroundActivity as androidx.appcompat.app.AppCompatActivity,
 		]
-		console.log('init ->', init)
-		init(activity)
-		isServiceRunning()
 		let that = new WeakRef(this)
 		this.callback = new android.view.SurfaceHolder.Callback({
 			surfaceChanged(holder) {

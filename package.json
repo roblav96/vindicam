@@ -12,7 +12,7 @@
 		"del": "del hooks node_modules platforms",
 		"delp": "del platforms",
 		"postinstall": "run-p postinstall:*",
-		"postinstall:update-ns-webpack": "cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js webpack.config.js"
+		"postinstall:update-ns-webpack": "echo cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js ."
 	},
 	"dependencies": {
 		"@nativescript/core": "^7.0.0",
