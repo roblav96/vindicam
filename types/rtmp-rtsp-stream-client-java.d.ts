@@ -26,6 +26,7 @@ declare module com {
 					public publishAudioData(param0: native.Array<number>, param1: number, param2: number): void;
 					public setVideoResolution(param0: number, param1: number): void;
 					public publishVideoData(param0: native.Array<number>, param1: number, param2: number): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: net.ossrs.rtmp.ConnectCheckerRtmp);
 				}
 			}
@@ -50,6 +51,7 @@ declare module com {
 						publishAudioData(param0: native.Array<number>, param1: number, param2: number): void;
 						setVideoResolution(param0: number, param1: number): void;
 						setAuthorization(param0: string, param1: string): void;
+						setLogs(param0: boolean): void;
 					});
 					public constructor();
 					public publish(param0: string): boolean;
@@ -59,6 +61,7 @@ declare module com {
 					public publishAudioData(param0: native.Array<number>, param1: number, param2: number): void;
 					public setVideoResolution(param0: number, param1: number): void;
 					public publishVideoData(param0: native.Array<number>, param1: number, param2: number): void;
+					public setLogs(param0: boolean): void;
 				}
 			}
 		}
@@ -315,7 +318,7 @@ declare module com {
 						public static ECMA_MAP: com.github.faucamp.simplertmp.amf.AmfType;
 						public static STRICT_ARRAY: com.github.faucamp.simplertmp.amf.AmfType;
 						public static valueOf(param0: number): com.github.faucamp.simplertmp.amf.AmfType;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 						public static values(): native.Array<com.github.faucamp.simplertmp.amf.AmfType>;
 						public static valueOf(param0: string): com.github.faucamp.simplertmp.amf.AmfType;
 						public getValue(): number;
@@ -385,6 +388,7 @@ declare module com {
 					export class RtmpConnection extends java.lang.Object implements com.github.faucamp.simplertmp.RtmpPublisher {
 						public static class: java.lang.Class<com.github.faucamp.simplertmp.io.RtmpConnection>;
 						public close(): void;
+						public setLogs(param0: boolean): void;
 						public constructor(param0: net.ossrs.rtmp.ConnectCheckerRtmp);
 						public setAuthorization(param0: string, param1: string): void;
 						public publish(param0: string): boolean;
@@ -649,7 +653,7 @@ declare module com {
 							public static TYPE_1_RELATIVE_LARGE: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static TYPE_2_RELATIVE_TIMESTAMP_ONLY: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static TYPE_3_RELATIVE_SINGLE_BYTE: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
-							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType>;
@@ -672,7 +676,7 @@ declare module com {
 							public static COMMAND_AMF0: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static SHARED_OBJECT_AMF0: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static AGGREGATE_MESSAGE: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
-							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
@@ -754,7 +758,7 @@ declare module com {
 							public static HARD: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static SOFT: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static DYNAMIC: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
-							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
@@ -802,7 +806,7 @@ declare module com {
 							public static PONG_REPLY: com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static BUFFER_EMPTY: com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static BUFFER_READY: com.github.faucamp.simplertmp.packets.UserControl.Type;
-							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.UserControl.Type>;
@@ -905,6 +909,7 @@ declare module com {
 				public inputAvailable(param0: globalAndroid.media.MediaCodec, param1: number): void;
 				public isRunning(): boolean;
 				public checkBuffer(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
+				public fixTimeStamp(param0: globalAndroid.media.MediaCodec.BufferInfo): void;
 			}
 		}
 	}
@@ -1369,9 +1374,9 @@ declare module com {
 						public constructor(param0: globalAndroid.view.Surface, param1: com.pedro.encoder.input.gl.SurfaceManager);
 						public constructor();
 						public getEglDisplay(): globalAndroid.opengl.EGLDisplay;
+						public release(param0: boolean): void;
 						public getEglSurface(): globalAndroid.opengl.EGLSurface;
 						public constructor(param0: globalAndroid.view.Surface, param1: globalAndroid.opengl.EGLContext);
-						public release(): void;
 						public makeCurrent(): void;
 						public swapBuffer(): void;
 						public getEglContext(): globalAndroid.opengl.EGLContext;
@@ -2832,7 +2837,7 @@ declare module com {
 							public static BACK: com.pedro.encoder.input.video.CameraHelper.Facing;
 							public static FRONT: com.pedro.encoder.input.video.CameraHelper.Facing;
 							public static values(): native.Array<com.pedro.encoder.input.video.CameraHelper.Facing>;
-							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 							public static valueOf(param0: string): com.pedro.encoder.input.video.CameraHelper.Facing;
 						}
 					}
@@ -2953,7 +2958,7 @@ declare module com {
 						public static SOFTWARE: com.pedro.encoder.utils.CodecUtil.Force;
 						public static HARDWARE: com.pedro.encoder.utils.CodecUtil.Force;
 						public static valueOf(param0: string): com.pedro.encoder.utils.CodecUtil.Force;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 						public static values(): native.Array<com.pedro.encoder.utils.CodecUtil.Force>;
 					}
 				}
@@ -3124,7 +3129,7 @@ declare module com {
 						public static BOTTOM_LEFT: com.pedro.encoder.utils.gl.TranslateTo;
 						public static BOTTOM_RIGHT: com.pedro.encoder.utils.gl.TranslateTo;
 						public static values(): native.Array<com.pedro.encoder.utils.gl.TranslateTo>;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 						public static valueOf(param0: string): com.pedro.encoder.utils.gl.TranslateTo;
 					}
 				}
@@ -3370,7 +3375,7 @@ declare module com {
 					public getFormatCodec(): number;
 					public static valueOf(param0: string): com.pedro.encoder.video.FormatVideoEncoder;
 					public static values(): native.Array<com.pedro.encoder.video.FormatVideoEncoder>;
-					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 				}
 			}
 		}
@@ -3467,6 +3472,7 @@ declare module com {
 				export abstract class Camera1Base extends java.lang.Object implements com.pedro.encoder.audio.GetAacData, com.pedro.encoder.input.video.GetCameraData, com.pedro.encoder.video.GetVideoData, com.pedro.encoder.input.audio.GetMicrophoneData {
 					public static class: java.lang.Class<com.pedro.rtplibrary.base.Camera1Base>;
 					public videoEncoder: com.pedro.encoder.video.VideoEncoder;
+					public recordController: com.pedro.rtplibrary.util.RecordController;
 					public reConnect(param0: number): void;
 					public onVideoFormat(param0: globalAndroid.media.MediaFormat): void;
 					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
@@ -3546,6 +3552,7 @@ declare module com {
 					public startStreamRtp(param0: string): void;
 					public disableLantern(): void;
 					public setPreviewOrientation(param0: number): void;
+					public setLogs(param0: boolean): void;
 					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number, param2: number): void;
 					public stopStream(): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
@@ -3576,106 +3583,108 @@ declare module com {
 					public static class: java.lang.Class<com.pedro.rtplibrary.base.Camera2Base>;
 					public context: globalAndroid.content.Context;
 					public videoEncoder: com.pedro.encoder.video.VideoEncoder;
+					public recordController: com.pedro.rtplibrary.util.RecordController;
 					public reConnect(param0: number): void;
-					public onVideoFormat(param0: globalAndroid.media.MediaFormat): void;
-					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing): void;
 					public getCameraCharacteristics(): globalAndroid.hardware.camera2.CameraCharacteristics;
 					public resetSentVideoFrames(): void;
 					public isOnPreview(): boolean;
 					public reTry(param0: number, param1: string): boolean;
-					public onSpsPpsVpsRtp(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
-					public isFrontCamera(): boolean;
 					public enableLantern(): void;
 					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number, param2: number, param3: number): void;
 					public startPreview(): void;
-					public getMaxZoom(): number;
-					public getBitrate(): number;
-					public startStream(param0: string): void;
-					public getStreamWidth(): number;
 					public switchCamera(): void;
 					public enableFaceDetection(param0: com.pedro.encoder.input.video.Camera2ApiManager.FaceDetectorCallback): void;
 					public getRecordStatus(): com.pedro.rtplibrary.util.RecordController.Status;
-					public isAutoFocusEnabled(): boolean;
-					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
 					public getDroppedAudioFrames(): number;
 					public disableAudio(): void;
 					public isRecording(): boolean;
 					/** @deprecated */
 					public reTry(param0: number): void;
-					public enableAutoFocus(): void;
 					public prepareAudio(param0: number, param1: number, param2: boolean): boolean;
-					public getSentVideoFrames(): number;
-					public isFaceDetectionEnabled(): boolean;
-					public isLanternSupported(): boolean;
-					public setZoom(param0: number): void;
 					public setFpsListener(param0: com.pedro.rtplibrary.util.FpsListener.Callback): void;
-					public getResolutionValue(): number;
-					public setLimitFPSOnFly(param0: number): void;
-					public stopStreamRtp(): void;
-					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
-					public constructor(param0: globalAndroid.content.Context, param1: boolean);
 					public setCameraCallbacks(param0: com.pedro.encoder.input.video.CameraCallbacks): void;
 					public getVideoData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public replaceView(param0: com.pedro.rtplibrary.view.OpenGlView): void;
 					public getDroppedVideoFrames(): number;
-					public resetDroppedAudioFrames(): void;
-					public resizeCache(param0: number): void;
 					public disableFaceDetection(): void;
-					public prepareAudioRtp(param0: boolean, param1: number): void;
-					public stopPreview(): void;
-					public prepareVideo(): boolean;
 					public inputPCMData(param0: com.pedro.encoder.Frame): void;
 					public getH264DataRtp(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					/** @deprecated */
 					public constructor(param0: globalAndroid.view.TextureView);
-					public getStreamHeight(): number;
 					public getSentAudioFrames(): number;
 					public isStreaming(): boolean;
 					public prepareVideo(param0: number, param1: number, param2: number): boolean;
-					public getAacDataRtp(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
-					public prepareAudio(): boolean;
-					public setForce(param0: com.pedro.encoder.utils.CodecUtil.Force, param1: com.pedro.encoder.utils.CodecUtil.Force): void;
 					public getResolutionsBack(): java.util.List<any>;
 					/** @deprecated */
 					public shouldRetry(param0: string): boolean;
-					public prepareAudio(param0: number, param1: number, param2: boolean, param3: boolean, param4: boolean): boolean;
-					public onSpsPps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer): void;
 					/** @deprecated */
 					public constructor(param0: globalAndroid.view.SurfaceView);
 					public replaceView(param0: com.pedro.rtplibrary.view.LightOpenGlView): void;
 					public setAuthorization(param0: string, param1: string): void;
 					public isAudioMuted(): boolean;
 					public setReTries(param0: number): void;
-					public stopRecord(): void;
-					public getZoom(): number;
-					public pauseRecord(): void;
-					public constructor(param0: com.pedro.rtplibrary.view.OpenGlView);
-					public replaceView(param0: globalAndroid.content.Context): void;
 					public getCacheSize(): number;
-					public resetDroppedVideoFrames(): void;
-					public resetSentAudioFrames(): void;
-					public setZoom(param0: globalAndroid.view.MotionEvent): void;
 					public resumeRecord(): void;
 					public isLanternEnabled(): boolean;
 					public startStreamRtp(param0: string): void;
 					public getResolutionsFront(): java.util.List<any>;
 					public disableLantern(): void;
-					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number, param2: number): void;
+					public setLogs(param0: boolean): void;
 					public stopStream(): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
-					public setVideoBitrateOnFly(param0: number): void;
 					public prepareVideo(param0: number, param1: number, param2: number, param3: number, param4: number): boolean;
-					public getGlInterface(): com.pedro.rtplibrary.view.GlInterface;
-					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number): void;
 					public setCustomAudioEffect(param0: com.pedro.encoder.input.audio.CustomAudioEffect): void;
 					public prepareVideo(param0: number, param1: number, param2: number, param3: number, param4: number, param5: number, param6: number, param7: number): boolean;
 					public isVideoEnabled(): boolean;
 					public prepareVideo(param0: number, param1: number, param2: number, param3: number, param4: number, param5: number): boolean;
 					public startRecord(param0: string, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public startRecord(param0: string): void;
-					public enableAudio(): void;
 					public disableAutoFocus(): void;
+					public onVideoFormat(param0: globalAndroid.media.MediaFormat): void;
+					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
+					public onSpsPpsVpsRtp(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
+					public isFrontCamera(): boolean;
+					public getMaxZoom(): number;
+					public getBitrate(): number;
+					public startStream(param0: string): void;
+					public getStreamWidth(): number;
+					public isAutoFocusEnabled(): boolean;
+					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public enableAutoFocus(): void;
+					public getSentVideoFrames(): number;
+					public isFaceDetectionEnabled(): boolean;
+					public isLanternSupported(): boolean;
+					public setZoom(param0: number): void;
+					public getResolutionValue(): number;
+					public setLimitFPSOnFly(param0: number): void;
+					public stopStreamRtp(): void;
+					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
+					public constructor(param0: globalAndroid.content.Context, param1: boolean);
+					public resetDroppedAudioFrames(): void;
+					public resizeCache(param0: number): void;
+					public prepareAudioRtp(param0: boolean, param1: number): void;
+					public stopPreview(): void;
+					public prepareVideo(): boolean;
+					public getStreamHeight(): number;
+					public getAacDataRtp(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
+					public prepareAudio(): boolean;
+					public setForce(param0: com.pedro.encoder.utils.CodecUtil.Force, param1: com.pedro.encoder.utils.CodecUtil.Force): void;
+					public prepareAudio(param0: number, param1: number, param2: boolean, param3: boolean, param4: boolean): boolean;
+					public onSpsPps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer): void;
+					public stopRecord(): void;
+					public getZoom(): number;
+					public pauseRecord(): void;
+					public constructor(param0: com.pedro.rtplibrary.view.OpenGlView);
+					public replaceView(param0: globalAndroid.content.Context): void;
+					public resetDroppedVideoFrames(): void;
+					public resetSentAudioFrames(): void;
+					public setZoom(param0: globalAndroid.view.MotionEvent): void;
+					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number, param2: number): void;
+					public setVideoBitrateOnFly(param0: number): void;
+					public getGlInterface(): com.pedro.rtplibrary.view.GlInterface;
+					public startPreview(param0: com.pedro.encoder.input.video.CameraHelper.Facing, param1: number): void;
+					public enableAudio(): void;
 				}
 			}
 		}
@@ -3691,6 +3700,7 @@ declare module com {
 					public context: globalAndroid.content.Context;
 					public videoEncoder: com.pedro.encoder.video.VideoEncoder;
 					public surfaceView: globalAndroid.view.SurfaceView;
+					public recordController: com.pedro.rtplibrary.util.RecordController;
 					public reConnect(param0: number): void;
 					public onVideoFormat(param0: globalAndroid.media.MediaFormat): void;
 					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
@@ -3748,6 +3758,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public resumeRecord(): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStream(): void;
 					public setVideoBitrateOnFly(param0: number): void;
 					public getGlInterface(): com.pedro.rtplibrary.view.GlInterface;
@@ -3770,6 +3781,8 @@ declare module com {
 				export abstract class FromFileBase extends java.lang.Object implements com.pedro.encoder.video.GetVideoData, com.pedro.encoder.audio.GetAacData, com.pedro.encoder.input.audio.GetMicrophoneData, com.pedro.encoder.input.decoder.LoopFileInterface {
 					public static class: java.lang.Class<com.pedro.rtplibrary.base.FromFileBase>;
 					public videoEncoder: com.pedro.encoder.video.VideoEncoder;
+					public recordController: com.pedro.rtplibrary.util.RecordController;
+					public videoEnabled: boolean;
 					public reConnect(param0: number): void;
 					public onVideoFormat(param0: globalAndroid.media.MediaFormat): void;
 					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
@@ -3834,6 +3847,7 @@ declare module com {
 					public getVideoTime(): number;
 					public onReset(param0: boolean): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStream(): void;
 					public getAudioTime(): number;
 					public setVideoBitrateOnFly(param0: number): void;
@@ -3855,6 +3869,7 @@ declare module com {
 			export module base {
 				export abstract class OnlyAudioBase extends java.lang.Object implements com.pedro.encoder.audio.GetAacData, com.pedro.encoder.input.audio.GetMicrophoneData {
 					public static class: java.lang.Class<com.pedro.rtplibrary.base.OnlyAudioBase>;
+					public recordController: com.pedro.rtplibrary.util.RecordController;
 					public reConnect(param0: number): void;
 					public inputPCMData(param0: com.pedro.encoder.Frame): void;
 					public getAacData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
@@ -3871,8 +3886,12 @@ declare module com {
 					public startStream(param0: string): void;
 					public setAuthorization(param0: string, param1: string): void;
 					public isAudioMuted(): boolean;
+					public getRecordStatus(): com.pedro.rtplibrary.util.RecordController.Status;
 					public setReTries(param0: number): void;
+					public stopRecord(): void;
+					public pauseRecord(): void;
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public isRecording(): boolean;
 					public getDroppedAudioFrames(): number;
 					public disableAudio(): void;
 					/** @deprecated */
@@ -3882,14 +3901,18 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public prepareAudio(param0: number, param1: number, param2: boolean): boolean;
 					public getSentVideoFrames(): number;
+					public resumeRecord(): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStream(): void;
 					public stopStreamRtp(): void;
 					public setCustomAudioEffect(param0: com.pedro.encoder.input.audio.CustomAudioEffect): void;
 					public getDroppedVideoFrames(): number;
 					public resetDroppedAudioFrames(): void;
+					public startRecord(param0: string, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public resizeCache(param0: number): void;
 					public prepareAudioRtp(param0: boolean, param1: number): void;
+					public startRecord(param0: string): void;
 					public enableAudio(): void;
 				}
 			}
@@ -4078,6 +4101,7 @@ declare module com {
 					public constructor(param0: com.pedro.rtplibrary.view.OpenGlView, param1: net.ossrs.rtmp.ConnectCheckerRtmp);
 					public setProfileIop(param0: number): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public inputYUVData(param0: com.pedro.encoder.Frame): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
 					public constructor(param0: globalAndroid.content.Context);
@@ -4137,6 +4161,7 @@ declare module com {
 					public constructor(param0: com.pedro.rtplibrary.view.OpenGlView, param1: net.ossrs.rtmp.ConnectCheckerRtmp);
 					public setProfileIop(param0: number): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView, param1: net.ossrs.rtmp.ConnectCheckerRtmp);
 					public stopStreamRtp(): void;
@@ -4184,6 +4209,7 @@ declare module com {
 					public getSentVideoFrames(): number;
 					public setProfileIop(param0: number): void;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public constructor(param0: globalAndroid.content.Context, param1: boolean);
@@ -4236,6 +4262,7 @@ declare module com {
 					public onReset(param0: boolean): void;
 					public constructor(param0: globalAndroid.content.Context, param1: com.pedro.encoder.input.decoder.VideoDecoderInterface, param2: com.pedro.encoder.input.decoder.AudioDecoderInterface);
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public shouldRetry(param0: string): boolean;
@@ -4276,6 +4303,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public getSentVideoFrames(): number;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: net.ossrs.rtmp.ConnectCheckerRtmp);
 					public stopStreamRtp(): void;
 					public shouldRetry(param0: string): boolean;
@@ -4323,6 +4351,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public getSentVideoFrames(): number;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public inputYUVData(param0: com.pedro.encoder.Frame): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
 					public constructor(param0: globalAndroid.content.Context);
@@ -4380,6 +4409,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public getSentVideoFrames(): number;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: com.pedro.rtplibrary.view.LightOpenGlView);
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
@@ -4429,6 +4459,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public getSentVideoFrames(): number;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public constructor(param0: globalAndroid.content.Context, param1: boolean);
@@ -4481,6 +4512,7 @@ declare module com {
 					public onReset(param0: boolean): void;
 					public constructor(param0: globalAndroid.content.Context, param1: com.pedro.encoder.input.decoder.VideoDecoderInterface, param2: com.pedro.encoder.input.decoder.AudioDecoderInterface);
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public shouldRetry(param0: string): boolean;
@@ -4521,6 +4553,7 @@ declare module com {
 					public resetSentAudioFrames(): void;
 					public getSentVideoFrames(): number;
 					public startStreamRtp(param0: string): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: com.pedro.rtsp.utils.ConnectCheckerRtsp);
 					public stopStreamRtp(): void;
 					public shouldRetry(param0: string): boolean;
@@ -4604,11 +4637,13 @@ declare module com {
 					public recordAudio(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public resetFormats(): void;
 					public setAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public setAudioFormat(param0: globalAndroid.media.MediaFormat, param1: boolean): void;
 					public getStatus(): com.pedro.rtplibrary.util.RecordController.Status;
 					public constructor();
 					public isRunning(): boolean;
 					public startRecord(param0: string, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public stopRecord(): void;
+					public setVideoMime(param0: string): void;
 					public pauseRecord(): void;
 					public isRecording(): boolean;
 				}
@@ -4631,7 +4666,7 @@ declare module com {
 						public static RECORDING: com.pedro.rtplibrary.util.RecordController.Status;
 						public static PAUSED: com.pedro.rtplibrary.util.RecordController.Status;
 						public static RESUMED: com.pedro.rtplibrary.util.RecordController.Status;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 						public static valueOf(param0: string): com.pedro.rtplibrary.util.RecordController.Status;
 						public static values(): native.Array<com.pedro.rtplibrary.util.RecordController.Status>;
 					}
@@ -5045,11 +5080,11 @@ declare module com {
 					public static TAG: string;
 					public static PACKET_LENGTH: number;
 					public static getInstance(param0: com.pedro.rtsp.rtsp.Protocol, param1: number, param2: number): com.pedro.rtsp.rtcp.BaseSenderReport;
-					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number): void;
+					public update(param0: com.pedro.rtsp.rtsp.RtpFrame, param1: boolean): void;
 					public setDataStream(param0: java.io.OutputStream, param1: string): void;
 					public reset(): void;
 					public close(): void;
-					public update(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
+					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number, param5: boolean): void;
 				}
 			}
 		}
@@ -5062,10 +5097,10 @@ declare module com {
 			export module rtcp {
 				export class SenderReportTcp extends com.pedro.rtsp.rtcp.BaseSenderReport {
 					public static class: java.lang.Class<com.pedro.rtsp.rtcp.SenderReportTcp>;
-					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number): void;
 					public setDataStream(param0: java.io.OutputStream, param1: string): void;
 					public constructor();
 					public close(): void;
+					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number, param5: boolean): void;
 				}
 			}
 		}
@@ -5078,9 +5113,9 @@ declare module com {
 			export module rtcp {
 				export class SenderReportUdp extends com.pedro.rtsp.rtcp.BaseSenderReport {
 					public static class: java.lang.Class<com.pedro.rtsp.rtcp.SenderReportUdp>;
-					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number): void;
 					public setDataStream(param0: java.io.OutputStream, param1: string): void;
 					public close(): void;
+					public sendReport(param0: native.Array<number>, param1: com.pedro.rtsp.rtsp.RtpFrame, param2: string, param3: number, param4: number, param5: boolean): void;
 					public constructor(param0: number, param1: number);
 				}
 			}
@@ -5223,8 +5258,8 @@ declare module com {
 						public constructor();
 						public static getInstance(param0: com.pedro.rtsp.rtsp.Protocol, param1: number, param2: number): com.pedro.rtsp.rtp.sockets.BaseRtpSocket;
 						public setDataStream(param0: java.io.OutputStream, param1: string): void;
+						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame, param1: boolean): void;
 						public close(): void;
-						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
 					}
 				}
 			}
@@ -5241,8 +5276,8 @@ declare module com {
 						public static class: java.lang.Class<com.pedro.rtsp.rtp.sockets.RtpSocketTcp>;
 						public constructor();
 						public setDataStream(param0: java.io.OutputStream, param1: string): void;
+						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame, param1: boolean): void;
 						public close(): void;
-						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
 					}
 				}
 			}
@@ -5259,9 +5294,9 @@ declare module com {
 						public static class: java.lang.Class<com.pedro.rtsp.rtp.sockets.RtpSocketUdp>;
 						public constructor();
 						public setDataStream(param0: java.io.OutputStream, param1: string): void;
+						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame, param1: boolean): void;
 						public close(): void;
 						public constructor(param0: number, param1: number);
-						public sendFrame(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
 					}
 				}
 			}
@@ -5348,7 +5383,7 @@ declare module com {
 					public static TCP: com.pedro.rtsp.rtsp.Protocol;
 					public static valueOf(param0: string): com.pedro.rtsp.rtsp.Protocol;
 					public static values(): native.Array<com.pedro.rtsp.rtsp.Protocol>;
-					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 				}
 			}
 		}
@@ -5409,6 +5444,7 @@ declare module com {
 					public getSentVideoFrames(): number;
 					public getConnectCheckerRtsp(): com.pedro.rtsp.utils.ConnectCheckerRtsp;
 					public setOnlyAudio(param0: boolean): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: com.pedro.rtsp.utils.ConnectCheckerRtsp);
 					public getPath(): string;
 					public shouldRetry(param0: string): boolean;
@@ -5440,6 +5476,7 @@ declare module com {
 					public setVideoInfo(param0: native.Array<number>, param1: native.Array<number>, param2: native.Array<number>): void;
 					public onVideoFrameCreated(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
 					public start(): void;
+					public setLogs(param0: boolean): void;
 					public constructor(param0: com.pedro.rtsp.utils.ConnectCheckerRtsp);
 					public setSocketsInfo(param0: com.pedro.rtsp.rtsp.Protocol, param1: native.Array<number>, param2: native.Array<number>): void;
 					public onAudioFrameCreated(param0: com.pedro.rtsp.rtsp.RtpFrame): void;
@@ -5468,7 +5505,7 @@ declare module com {
 					public static H265: com.pedro.rtsp.rtsp.VideoCodec;
 					public static valueOf(param0: string): com.pedro.rtsp.rtsp.VideoCodec;
 					public static values(): native.Array<com.pedro.rtsp.rtsp.VideoCodec>;
-					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
 				}
 			}
 		}
@@ -5725,6 +5762,7 @@ declare module net {
 				public stop(): void;
 				public resetSentVideoFrames(): void;
 				public getDroppedAudioFrames(): number;
+				public setLogs(param0: boolean): void;
 				public setVideoResolution(param0: number, param1: number): void;
 				public setAuthorization(param0: string, param1: string): void;
 				public forceAkamaiTs(param0: boolean): void;
