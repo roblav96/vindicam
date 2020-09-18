@@ -318,7 +318,7 @@ declare module com {
 						public static ECMA_MAP: com.github.faucamp.simplertmp.amf.AmfType;
 						public static STRICT_ARRAY: com.github.faucamp.simplertmp.amf.AmfType;
 						public static valueOf(param0: number): com.github.faucamp.simplertmp.amf.AmfType;
-						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 						public static values(): native.Array<com.github.faucamp.simplertmp.amf.AmfType>;
 						public static valueOf(param0: string): com.github.faucamp.simplertmp.amf.AmfType;
 						public getValue(): number;
@@ -653,7 +653,7 @@ declare module com {
 							public static TYPE_1_RELATIVE_LARGE: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static TYPE_2_RELATIVE_TIMESTAMP_ONLY: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static TYPE_3_RELATIVE_SINGLE_BYTE: com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
-							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.RtmpHeader.ChunkType>;
@@ -676,7 +676,7 @@ declare module com {
 							public static COMMAND_AMF0: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static SHARED_OBJECT_AMF0: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static AGGREGATE_MESSAGE: com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
-							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.RtmpHeader.MessageType;
@@ -758,7 +758,7 @@ declare module com {
 							public static HARD: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static SOFT: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static DYNAMIC: com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
-							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.SetPeerBandwidth.LimitType;
@@ -806,7 +806,7 @@ declare module com {
 							public static PONG_REPLY: com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static BUFFER_EMPTY: com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static BUFFER_READY: com.github.faucamp.simplertmp.packets.UserControl.Type;
-							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 							public static valueOf(param0: string): com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static valueOf(param0: number): com.github.faucamp.simplertmp.packets.UserControl.Type;
 							public static values(): native.Array<com.github.faucamp.simplertmp.packets.UserControl.Type>;
@@ -2837,7 +2837,7 @@ declare module com {
 							public static BACK: com.pedro.encoder.input.video.CameraHelper.Facing;
 							public static FRONT: com.pedro.encoder.input.video.CameraHelper.Facing;
 							public static values(): native.Array<com.pedro.encoder.input.video.CameraHelper.Facing>;
-							public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+							public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 							public static valueOf(param0: string): com.pedro.encoder.input.video.CameraHelper.Facing;
 						}
 					}
@@ -2958,7 +2958,7 @@ declare module com {
 						public static SOFTWARE: com.pedro.encoder.utils.CodecUtil.Force;
 						public static HARDWARE: com.pedro.encoder.utils.CodecUtil.Force;
 						public static valueOf(param0: string): com.pedro.encoder.utils.CodecUtil.Force;
-						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 						public static values(): native.Array<com.pedro.encoder.utils.CodecUtil.Force>;
 					}
 				}
@@ -3129,7 +3129,7 @@ declare module com {
 						public static BOTTOM_LEFT: com.pedro.encoder.utils.gl.TranslateTo;
 						public static BOTTOM_RIGHT: com.pedro.encoder.utils.gl.TranslateTo;
 						public static values(): native.Array<com.pedro.encoder.utils.gl.TranslateTo>;
-						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 						public static valueOf(param0: string): com.pedro.encoder.utils.gl.TranslateTo;
 					}
 				}
@@ -3375,7 +3375,7 @@ declare module com {
 					public getFormatCodec(): number;
 					public static valueOf(param0: string): com.pedro.encoder.video.FormatVideoEncoder;
 					public static values(): native.Array<com.pedro.encoder.video.FormatVideoEncoder>;
-					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 				}
 			}
 		}
@@ -4666,7 +4666,7 @@ declare module com {
 						public static RECORDING: com.pedro.rtplibrary.util.RecordController.Status;
 						public static PAUSED: com.pedro.rtplibrary.util.RecordController.Status;
 						public static RESUMED: com.pedro.rtplibrary.util.RecordController.Status;
-						public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 						public static valueOf(param0: string): com.pedro.rtplibrary.util.RecordController.Status;
 						public static values(): native.Array<com.pedro.rtplibrary.util.RecordController.Status>;
 					}
@@ -5383,7 +5383,7 @@ declare module com {
 					public static TCP: com.pedro.rtsp.rtsp.Protocol;
 					public static valueOf(param0: string): com.pedro.rtsp.rtsp.Protocol;
 					public static values(): native.Array<com.pedro.rtsp.rtsp.Protocol>;
-					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 				}
 			}
 		}
@@ -5505,7 +5505,7 @@ declare module com {
 					public static H265: com.pedro.rtsp.rtsp.VideoCodec;
 					public static valueOf(param0: string): com.pedro.rtsp.rtsp.VideoCodec;
 					public static values(): native.Array<com.pedro.rtsp.rtsp.VideoCodec>;
-					public static valueOf(param0: java.lang.Class, param1: string): java.lang.Enum;
+					public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 				}
 			}
 		}
