@@ -20,8 +20,6 @@ export function isServiceRunning() {
 	return false
 }
 
-
-
 export function init(contextApp: androidx.appcompat.app.AppCompatActivity) {
 	RtpServiceClass.contextApp = contextApp
 	if (RtpServiceClass.camera2Base == null) {
@@ -85,7 +83,10 @@ function getRtpServiceClass() {
 		onStartCommand(intent: android.content.Intent, flags: number, startId: number) {
 			super.onStartCommand(intent, flags, startId)
 			console.log('onStartCommand ->', intent, flags, startId)
-			console.log('com.tns.android.RtpService.contextApp ->', com.tns.android.RtpService.contextApp)
+			console.log(
+				'com.tns.android.RtpService.contextApp ->',
+				com.tns.android.RtpService.contextApp,
+			)
 			this.endpoint = intent.getStringExtra('endpoint')
 			this.prepareStreamRtp()
 			this.startStreamRtp(this.endpoint)

@@ -11,6 +11,9 @@
 		"xcode": "ns prepare ios && open platforms/ios/vindicam.xcworkspace",
 		"del": "del hooks node_modules platforms",
 		"delp": "del platforms",
+		"livego": "run-p livego:*",
+		"livego:livego": "livego --flv_dir livego/flv --level debug",
+		"livego:curl": "delay 1 && curl 'http://127.0.0.1:8090/control/get?room=test'",
 		"postinstall": "run-p postinstall:*",
 		"postinstall:update-ns-webpack": "echo cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js ."
 	},
@@ -18,7 +21,7 @@
 		"@nativescript/core": "^7.0.3",
 		"@nativescript/theme": "^2.3.3",
 		"ansi-colors": "^4.1.1",
-		"dayjs": "^1.8.35",
+		"dayjs": "^1.8.36",
 		"lodash-es": "^4.17.15",
 		"rambda": "^6.1.0",
 		"rambdax": "^6.1.0",
@@ -34,8 +37,9 @@
 		"@types/shimmer": "^1.0.1",
 		"cpy-cli": "^3.1.1",
 		"del-cli": "^3.0.1",
+		"delay-cli": "^1.1.0",
 		"npm-run-all": "^4.1.5",
-		"typescript": "^4.0.2"
+		"typescript": "^4.0.3"
 	},
 	"author": "Robert Laverty <roblav96@gmail.com> (https://github.com/roblav96)",
 	"bugs": "https://github.com/roblav96/vindicam/issues",
