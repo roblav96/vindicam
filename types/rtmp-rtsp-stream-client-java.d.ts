@@ -1097,6 +1097,7 @@ declare module com {
 						public audioRecord: globalAndroid.media.AudioRecord;
 						public running: boolean;
 						public createInternalMicrophone(param0: globalAndroid.media.AudioPlaybackCaptureConfiguration, param1: number, param2: boolean): void;
+						public createInternalMicrophone(param0: globalAndroid.media.AudioPlaybackCaptureConfiguration, param1: number, param2: boolean, param3: boolean, param4: boolean): void;
 						public createMicrophone(): void;
 						public mute(): void;
 						public stop(): void;
@@ -1170,6 +1171,7 @@ declare module com {
 						public decode(): void;
 						public isStereo(): boolean;
 						public getSampleRate(): number;
+						public getOutsize(): number;
 						public mute(): void;
 						public reset(): void;
 						public unMute(): void;
@@ -1213,6 +1215,7 @@ declare module com {
 						public static TAG: string;
 						public loopFileInterface: com.pedro.encoder.input.decoder.LoopFileInterface;
 						public bufferInfo: globalAndroid.media.MediaCodec.BufferInfo;
+						public lock: any;
 						public extractor: globalAndroid.media.MediaExtractor;
 						public codec: globalAndroid.media.MediaCodec;
 						public running: boolean;
@@ -1374,9 +1377,10 @@ declare module com {
 						public constructor(param0: globalAndroid.view.Surface, param1: com.pedro.encoder.input.gl.SurfaceManager);
 						public constructor();
 						public getEglDisplay(): globalAndroid.opengl.EGLDisplay;
-						public release(param0: boolean): void;
 						public getEglSurface(): globalAndroid.opengl.EGLSurface;
 						public constructor(param0: globalAndroid.view.Surface, param1: globalAndroid.opengl.EGLContext);
+						public release(): void;
+						public constructor(param0: number, param1: number, param2: com.pedro.encoder.input.gl.SurfaceManager);
 						public makeCurrent(): void;
 						public swapBuffer(): void;
 						public getEglContext(): globalAndroid.opengl.EGLContext;
@@ -2741,7 +2745,6 @@ declare module com {
 						public openCameraId(param0: java.lang.Integer): void;
 						public openCameraFacing(param0: com.pedro.encoder.input.video.CameraHelper.Facing): void;
 						public isRunning(): boolean;
-						public setZoom(param0: java.lang.Float): void;
 						public onOpened(param0: globalAndroid.hardware.camera2.CameraDevice): void;
 						public isLanternEnabled(): boolean;
 						public disableFaceDetection(): void;
@@ -2770,6 +2773,7 @@ declare module com {
 						public prepareCamera(param0: globalAndroid.view.TextureView, param1: globalAndroid.view.Surface): void;
 						public getCameraResolutionsBack(): native.Array<any>;
 						public getCameraResolutions(param0: com.pedro.encoder.input.video.CameraHelper.Facing): native.Array<any>;
+						public setZoom(param0: number): void;
 						public openLastCamera(): void;
 						public disableAutoFocus(): void;
 						public getCameraResolutionsFront(): native.Array<any>;
@@ -2941,6 +2945,8 @@ declare module com {
 					public static H264_MIME: string;
 					public static H265_MIME: string;
 					public static AAC_MIME: string;
+					public static VORBIS_MIME: string;
+					public static OPUS_MIME: string;
 					public static getAllSoftwareEncoders(param0: string): java.util.List<globalAndroid.media.MediaCodecInfo>;
 					public static getAllHardwareDecoders(param0: string): java.util.List<globalAndroid.media.MediaCodecInfo>;
 					public constructor();
@@ -3014,8 +3020,8 @@ declare module com {
 					export class GlUtil extends java.lang.Object {
 						public static class: java.lang.Class<com.pedro.encoder.utils.gl.GlUtil>;
 						public static getStringFromRaw(param0: globalAndroid.content.Context, param1: number): string;
-						public static getBitmap(param0: boolean, param1: number, param2: number, param3: number, param4: number, param5: number): globalAndroid.graphics.Bitmap;
 						public constructor();
+						public static getBitmap(param0: number, param1: number): globalAndroid.graphics.Bitmap;
 						public static checkEglError(param0: string): void;
 						public static createExternalTextures(param0: number, param1: native.Array<number>, param2: number): void;
 						public static checkGlError(param0: string): void;
@@ -3492,6 +3498,7 @@ declare module com {
 					public getRecordStatus(): com.pedro.rtplibrary.util.RecordController.Status;
 					public isAutoFocusEnabled(): boolean;
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public getDroppedAudioFrames(): number;
 					public disableAudio(): void;
 					public isRecording(): boolean;
@@ -3509,6 +3516,7 @@ declare module com {
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public setCameraCallbacks(param0: com.pedro.encoder.input.video.CameraCallbacks): void;
+					public startRecord(param0: java.io.FileDescriptor): void;
 					public getVideoData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public getResolutionsBack(): java.util.List<globalAndroid.hardware.Camera.Size>;
 					public replaceView(param0: com.pedro.rtplibrary.view.OpenGlView): void;
@@ -3651,6 +3659,7 @@ declare module com {
 					public getStreamWidth(): number;
 					public isAutoFocusEnabled(): boolean;
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public enableAutoFocus(): void;
 					public getSentVideoFrames(): number;
 					public isFaceDetectionEnabled(): boolean;
@@ -3661,6 +3670,7 @@ declare module com {
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public constructor(param0: globalAndroid.content.Context, param1: boolean);
+					public startRecord(param0: java.io.FileDescriptor): void;
 					public resetDroppedAudioFrames(): void;
 					public resizeCache(param0: number): void;
 					public prepareAudioRtp(param0: boolean, param1: number): void;
@@ -3712,6 +3722,7 @@ declare module com {
 					public getStreamWidth(): number;
 					public getRecordStatus(): com.pedro.rtplibrary.util.RecordController.Status;
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public getDroppedAudioFrames(): number;
 					public disableAudio(): void;
 					public isRecording(): boolean;
@@ -3719,6 +3730,7 @@ declare module com {
 					public reTry(param0: number): void;
 					public prepareVideo(param0: number, param1: number, param2: number, param3: number, param4: number, param5: number, param6: number, param7: number, param8: number): boolean;
 					public prepareAudio(param0: number, param1: number, param2: boolean): boolean;
+					public prepareInternalAudio(param0: number, param1: number, param2: boolean, param3: boolean, param4: boolean): boolean;
 					public getSentVideoFrames(): number;
 					public setFpsListener(param0: com.pedro.rtplibrary.util.FpsListener.Callback): void;
 					public getResolutionValue(): number;
@@ -3726,6 +3738,7 @@ declare module com {
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
 					public constructor(param0: globalAndroid.content.Context, param1: boolean);
+					public startRecord(param0: java.io.FileDescriptor): void;
 					public getVideoData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public prepareInternalAudio(param0: number, param1: number, param2: boolean): boolean;
 					public getDroppedVideoFrames(): number;
@@ -3753,6 +3766,7 @@ declare module com {
 					public setReTries(param0: number): void;
 					public stopRecord(): void;
 					public pauseRecord(): void;
+					public prepareInternalAudio(): boolean;
 					public getCacheSize(): number;
 					public resetDroppedVideoFrames(): void;
 					public resetSentAudioFrames(): void;
@@ -3796,6 +3810,7 @@ declare module com {
 					public getRecordStatus(): com.pedro.rtplibrary.util.RecordController.Status;
 					public constructor(param0: com.pedro.rtplibrary.view.OpenGlView, param1: com.pedro.encoder.input.decoder.VideoDecoderInterface, param2: com.pedro.encoder.input.decoder.AudioDecoderInterface);
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public getDroppedAudioFrames(): number;
 					public isRecording(): boolean;
 					/** @deprecated */
@@ -3810,6 +3825,7 @@ declare module com {
 					public setLimitFPSOnFly(param0: number): void;
 					public stopStreamRtp(): void;
 					public onSpsPpsVps(param0: java.nio.ByteBuffer, param1: java.nio.ByteBuffer, param2: java.nio.ByteBuffer): void;
+					public startRecord(param0: java.io.FileDescriptor): void;
 					public getVideoData(param0: java.nio.ByteBuffer, param1: globalAndroid.media.MediaCodec.BufferInfo): void;
 					public replaceView(param0: com.pedro.rtplibrary.view.OpenGlView): void;
 					public getDroppedVideoFrames(): number;
@@ -3891,6 +3907,7 @@ declare module com {
 					public stopRecord(): void;
 					public pauseRecord(): void;
 					public onAudioFormat(param0: globalAndroid.media.MediaFormat): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public isRecording(): boolean;
 					public getDroppedAudioFrames(): number;
 					public disableAudio(): void;
@@ -3906,6 +3923,7 @@ declare module com {
 					public setLogs(param0: boolean): void;
 					public stopStream(): void;
 					public stopStreamRtp(): void;
+					public startRecord(param0: java.io.FileDescriptor): void;
 					public setCustomAudioEffect(param0: com.pedro.encoder.input.audio.CustomAudioEffect): void;
 					public getDroppedVideoFrames(): number;
 					public resetDroppedAudioFrames(): void;
@@ -4645,6 +4663,7 @@ declare module com {
 					public stopRecord(): void;
 					public setVideoMime(param0: string): void;
 					public pauseRecord(): void;
+					public startRecord(param0: java.io.FileDescriptor, param1: com.pedro.rtplibrary.util.RecordController.Listener): void;
 					public isRecording(): boolean;
 				}
 				export module RecordController {
@@ -4972,6 +4991,7 @@ declare module com {
 					public frameAvailable: boolean;
 					public running: boolean;
 					public initialized: boolean;
+					public surfaceManagerPhoto: com.pedro.encoder.input.gl.SurfaceManager;
 					public surfaceManager: com.pedro.encoder.input.gl.SurfaceManager;
 					public surfaceManagerEncoder: com.pedro.encoder.input.gl.SurfaceManager;
 					public fpsLimiter: com.pedro.encoder.input.video.FpsLimiter;

@@ -1,7 +1,7 @@
 import * as Application from '@nativescript/core/application'
 import * as Placeholder from '@nativescript/core/ui/placeholder'
 import { Observable, EventData, Page, NavigatedData } from '@nativescript/core'
-import { isServiceRunning } from '~/android/RtpService'
+// import { isServiceRunning } from '~/android/RtpService'
 
 export function navigatingTo(args: NavigatedData) {
 	let page = args.object as Page
@@ -25,7 +25,7 @@ export class RtmpPage extends Observable {
 			intent.putExtra('endpoint', ENDPOINT)
 			activity.startForegroundService(intent)
 			await new Promise((r) => setTimeout(r, 1000))
-			console.log('isServiceRunning() ->', isServiceRunning())
+			// console.log('isServiceRunning() ->', isServiceRunning())
 		} catch (error) {
 			console.error('[error] tapConnect -> %O', error)
 		}
