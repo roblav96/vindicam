@@ -6,6 +6,10 @@ Application.on('discardedError', (args) =>
 	console.error('████  DISCARDED ERROR  ████ ->', args.error),
 )
 
+// import { Trace } from '@nativescript/core/trace'
+// Trace.setCategories(Trace.categories.All)
+// Trace.enable()
+
 import * as dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
