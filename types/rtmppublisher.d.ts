@@ -16,7 +16,8 @@ declare module com {
 		export module rtmppublisher {
 			export class AudioHandler extends java.lang.Object implements com.takusemba.rtmppublisher.AudioRecorder.OnAudioRecorderStateChangedListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.AudioHandler>;
-				public onAudioRecorded(param0: native.Array<number>, param1: number): void;
+				public onAudioRecorded(data: native.Array<number>, length: number): void;
+				public onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
 			}
 			export module AudioHandler {
 				export class OnAudioEncoderStateListener extends java.lang.Object {
@@ -25,10 +26,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.AudioHandler$OnAudioEncoderStateListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onAudioDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
+						onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 					});
 					public constructor();
-					public onAudioDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
+					public onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 				}
 			}
 		}
@@ -49,10 +50,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.AudioRecorder$OnAudioRecorderStateChangedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onAudioRecorded(param0: native.Array<number>, param1: number): void;
+						onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
 					});
 					public constructor();
-					public onAudioRecorded(param0: native.Array<number>, param1: number): void;
+					public onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
 				}
 			}
 		}
@@ -93,9 +94,9 @@ declare module com {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.CameraMode>;
 				public static FRONT: com.takusemba.rtmppublisher.CameraMode;
 				public static BACK: com.takusemba.rtmppublisher.CameraMode;
+				public static valueOf(enumType: java.lang.Class<any>, name: string): java.lang.Enum<any>;
 				public static values(): native.Array<com.takusemba.rtmppublisher.CameraMode>;
-				public static valueOf(param0: string): com.takusemba.rtmppublisher.CameraMode;
-				public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+				public static valueOf(name: string): com.takusemba.rtmppublisher.CameraMode;
 			}
 		}
 	}
@@ -106,9 +107,12 @@ declare module com {
 		export module rtmppublisher {
 			export class CameraSurfaceRenderer extends java.lang.Object implements globalAndroid.opengl.GLSurfaceView.Renderer {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.CameraSurfaceRenderer>;
-				public onSurfaceChanged(param0: javax.microedition.khronos.opengles.GL10, param1: number, param2: number): void;
-				public onSurfaceCreated(param0: javax.microedition.khronos.opengles.GL10, param1: javax.microedition.khronos.egl.EGLConfig): void;
-				public onDrawFrame(param0: javax.microedition.khronos.opengles.GL10): void;
+				public onDrawFrame(unused: javax.microedition.khronos.opengles.GL10): void;
+				public onDrawFrame(arg1: javax.microedition.khronos.opengles.GL10): void;
+				public onSurfaceCreated(unused: javax.microedition.khronos.opengles.GL10, config: javax.microedition.khronos.egl.EGLConfig): void;
+				public onSurfaceCreated(arg1: javax.microedition.khronos.opengles.GL10, arg2: javax.microedition.khronos.egl.EGLConfig): void;
+				public onSurfaceChanged(unused: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
+				public onSurfaceChanged(arg1: javax.microedition.khronos.opengles.GL10, arg2: number, arg3: number): void;
 			}
 			export module CameraSurfaceRenderer {
 				export class OnRendererStateChangedListener extends java.lang.Object {
@@ -117,12 +121,12 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.CameraSurfaceRenderer$OnRendererStateChangedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onSurfaceCreated(param0: globalAndroid.graphics.SurfaceTexture): void;
-						onFrameDrawn(param0: number, param1: native.Array<number>, param2: number): void;
+						onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
+						onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
 					});
 					public constructor();
-					public onFrameDrawn(param0: number, param1: native.Array<number>, param2: number): void;
-					public onSurfaceCreated(param0: globalAndroid.graphics.SurfaceTexture): void;
+					public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
+					public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
 				}
 			}
 		}
@@ -189,15 +193,15 @@ declare module com {
 					public static DEFAULT_AUDIO_BITRATE: number;
 					public static DEFAULT_VIDEO_BITRATE: number;
 					public static DEFAULT_MODE: com.takusemba.rtmppublisher.CameraMode;
-					public setAudioBitrate(param0: number): com.takusemba.rtmppublisher.Publisher.Builder;
-					public setGlView(param0: globalAndroid.opengl.GLSurfaceView): com.takusemba.rtmppublisher.Publisher.Builder;
-					public setListener(param0: com.takusemba.rtmppublisher.PublisherListener): com.takusemba.rtmppublisher.Publisher.Builder;
-					public constructor(param0: globalAndroid.support.v7.app.AppCompatActivity);
+					public setCameraMode(mode: com.takusemba.rtmppublisher.CameraMode): com.takusemba.rtmppublisher.Publisher.Builder;
+					public setSize(width: number, height: number): com.takusemba.rtmppublisher.Publisher.Builder;
+					public constructor(activity: globalAndroid.support.v7.app.AppCompatActivity);
+					public setUrl(url: string): com.takusemba.rtmppublisher.Publisher.Builder;
 					public build(): com.takusemba.rtmppublisher.RtmpPublisher;
-					public setUrl(param0: string): com.takusemba.rtmppublisher.Publisher.Builder;
-					public setVideoBitrate(param0: number): com.takusemba.rtmppublisher.Publisher.Builder;
-					public setSize(param0: number, param1: number): com.takusemba.rtmppublisher.Publisher.Builder;
-					public setCameraMode(param0: com.takusemba.rtmppublisher.CameraMode): com.takusemba.rtmppublisher.Publisher.Builder;
+					public setVideoBitrate(videoBitrate: number): com.takusemba.rtmppublisher.Publisher.Builder;
+					public setAudioBitrate(audioBitrate: number): com.takusemba.rtmppublisher.Publisher.Builder;
+					public setListener(listener: com.takusemba.rtmppublisher.PublisherListener): com.takusemba.rtmppublisher.Publisher.Builder;
+					public setGlView(glView: globalAndroid.opengl.GLSurfaceView): com.takusemba.rtmppublisher.Publisher.Builder;
 				}
 			}
 		}
@@ -233,15 +237,18 @@ declare module com {
 		export module rtmppublisher {
 			export class RtmpPublisher extends java.lang.Object implements com.takusemba.rtmppublisher.Publisher, globalAndroid.graphics.SurfaceTexture.OnFrameAvailableListener, com.takusemba.rtmppublisher.CameraSurfaceRenderer.OnRendererStateChangedListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.RtmpPublisher>;
-				public onSurfaceCreated(param0: globalAndroid.graphics.SurfaceTexture): void;
-				public onResume(param0: any): void;
-				public onPause(param0: any): void;
+				public onSurfaceCreated(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
+				public onFrameDrawn(textureId: number, transform: native.Array<number>, timestamp: number): void;
+				public onResume(owner: any): void;
+				public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
 				public startPublishing(): void;
-				public onFrameDrawn(param0: number, param1: native.Array<number>, param2: number): void;
 				public switchCamera(): void;
-				public onFrameAvailable(param0: globalAndroid.graphics.SurfaceTexture): void;
+				public onPause(owner: any): void;
+				public onFrameAvailable(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
+				public onFrameAvailable(arg1: globalAndroid.graphics.SurfaceTexture): void;
 				public isPublishing(): boolean;
 				public stopPublishing(): void;
+				public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
 			}
 		}
 	}
@@ -252,8 +259,10 @@ declare module com {
 		export module rtmppublisher {
 			export class Streamer extends java.lang.Object implements com.takusemba.rtmppublisher.VideoHandler.OnVideoEncoderStateListener, com.takusemba.rtmppublisher.AudioHandler.OnAudioEncoderStateListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.Streamer>;
-				public onVideoDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
-				public onAudioDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
+				public onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
+				public onVideoDataEncoded(data: native.Array<number>, size: number, timestamp: number): void;
+				public onAudioDataEncoded(data: native.Array<number>, size: number, timestamp: number): void;
+				public onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 			}
 		}
 	}
@@ -277,8 +286,10 @@ declare module com {
 		export module rtmppublisher {
 			export class VideoHandler extends java.lang.Object implements com.takusemba.rtmppublisher.CameraSurfaceRenderer.OnRendererStateChangedListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.VideoHandler>;
-				public onSurfaceCreated(param0: globalAndroid.graphics.SurfaceTexture): void;
-				public onFrameDrawn(param0: number, param1: native.Array<number>, param2: number): void;
+				public onSurfaceCreated(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
+				public onFrameDrawn(textureId: number, transform: native.Array<number>, timestamp: number): void;
+				public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
+				public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
 			}
 			export module VideoHandler {
 				export class OnVideoEncoderStateListener extends java.lang.Object {
@@ -287,10 +298,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.VideoHandler$OnVideoEncoderStateListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onVideoDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
+						onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 					});
 					public constructor();
-					public onVideoDataEncoded(param0: native.Array<number>, param1: number, param2: number): void;
+					public onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 				}
 			}
 		}
@@ -320,7 +331,7 @@ declare module com {
 					public getTexCoordStride(): number;
 					public getVertexCount(): number;
 					public getTexCoordArray(): java.nio.FloatBuffer;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.Drawable2d.Prefab);
+					public constructor(shape: com.takusemba.rtmppublisher.gles.Drawable2d.Prefab);
 				}
 				export module Drawable2d {
 					export class Prefab {
@@ -328,9 +339,9 @@ declare module com {
 						public static TRIANGLE: com.takusemba.rtmppublisher.gles.Drawable2d.Prefab;
 						public static RECTANGLE: com.takusemba.rtmppublisher.gles.Drawable2d.Prefab;
 						public static FULL_RECTANGLE: com.takusemba.rtmppublisher.gles.Drawable2d.Prefab;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
 						public static values(): native.Array<com.takusemba.rtmppublisher.gles.Drawable2d.Prefab>;
-						public static valueOf(param0: string): com.takusemba.rtmppublisher.gles.Drawable2d.Prefab;
+						public static valueOf(enumType: java.lang.Class<any>, name: string): java.lang.Enum<any>;
+						public static valueOf(name: string): com.takusemba.rtmppublisher.gles.Drawable2d.Prefab;
 					}
 				}
 			}
@@ -347,22 +358,22 @@ declare module com {
 					public static FLAG_RECORDABLE: number;
 					public static FLAG_TRY_GLES3: number;
 					public makeNothingCurrent(): void;
-					public swapBuffers(param0: globalAndroid.opengl.EGLSurface): boolean;
-					public createOffscreenSurface(param0: number, param1: number): globalAndroid.opengl.EGLSurface;
+					public constructor(sharedContext: globalAndroid.opengl.EGLContext, flags: number);
 					public finalize(): void;
-					public queryString(param0: number): string;
-					public makeCurrent(param0: globalAndroid.opengl.EGLSurface, param1: globalAndroid.opengl.EGLSurface): void;
+					public swapBuffers(eglSurface: globalAndroid.opengl.EGLSurface): boolean;
+					public querySurface(eglSurface: globalAndroid.opengl.EGLSurface, what: number): number;
+					public queryString(what: number): string;
 					public release(): void;
-					public isCurrent(param0: globalAndroid.opengl.EGLSurface): boolean;
-					public createWindowSurface(param0: any): globalAndroid.opengl.EGLSurface;
-					public constructor(param0: globalAndroid.opengl.EGLContext, param1: number);
-					public makeCurrent(param0: globalAndroid.opengl.EGLSurface): void;
+					public static logCurrent(msg: string): void;
+					public makeCurrent(drawSurface: globalAndroid.opengl.EGLSurface, readSurface: globalAndroid.opengl.EGLSurface): void;
 					public constructor();
+					public createWindowSurface(surface: any): globalAndroid.opengl.EGLSurface;
+					public makeCurrent(eglSurface: globalAndroid.opengl.EGLSurface): void;
+					public setPresentationTime(eglSurface: globalAndroid.opengl.EGLSurface, nsecs: number): void;
+					public isCurrent(eglSurface: globalAndroid.opengl.EGLSurface): boolean;
 					public getGlVersion(): number;
-					public querySurface(param0: globalAndroid.opengl.EGLSurface, param1: number): number;
-					public setPresentationTime(param0: globalAndroid.opengl.EGLSurface, param1: number): void;
-					public static logCurrent(param0: string): void;
-					public releaseSurface(param0: globalAndroid.opengl.EGLSurface): void;
+					public releaseSurface(eglSurface: globalAndroid.opengl.EGLSurface): void;
+					public createOffscreenSurface(width: number, height: number): globalAndroid.opengl.EGLSurface;
 				}
 			}
 		}
@@ -377,17 +388,17 @@ declare module com {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.EglSurfaceBase>;
 					public static TAG: string;
 					public mEglCore: com.takusemba.rtmppublisher.gles.EglCore;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore);
 					public releaseEglSurface(): void;
-					public makeCurrentReadFrom(param0: com.takusemba.rtmppublisher.gles.EglSurfaceBase): void;
+					public saveFrame(file: java.io.File): void;
+					public makeCurrentReadFrom(readSurface: com.takusemba.rtmppublisher.gles.EglSurfaceBase): void;
 					public swapBuffers(): boolean;
-					public createOffscreenSurface(param0: number, param1: number): void;
 					public getHeight(): number;
-					public saveFrame(param0: java.io.File): void;
+					public createWindowSurface(surface: any): void;
 					public getWidth(): number;
 					public makeCurrent(): void;
-					public createWindowSurface(param0: any): void;
-					public setPresentationTime(param0: number): void;
+					public setPresentationTime(nsecs: number): void;
+					public createOffscreenSurface(width: number, height: number): void;
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore);
 				}
 			}
 		}
@@ -402,7 +413,7 @@ declare module com {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.FlatShadedProgram>;
 					public constructor();
 					public release(): void;
-					public draw(param0: native.Array<number>, param1: native.Array<number>, param2: java.nio.FloatBuffer, param3: number, param4: number, param5: number, param6: number): void;
+					public draw(mvpMatrix: native.Array<number>, color: native.Array<number>, vertexBuffer: java.nio.FloatBuffer, firstVertex: number, vertexCount: number, coordsPerVertex: number, vertexStride: number): void;
 				}
 			}
 		}
@@ -415,11 +426,11 @@ declare module com {
 			export module gles {
 				export class FullFrameRect extends java.lang.Object {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.FullFrameRect>;
-					public changeProgram(param0: com.takusemba.rtmppublisher.gles.Texture2dProgram): void;
-					public release(param0: boolean): void;
-					public drawFrame(param0: number, param1: native.Array<number>): void;
+					public constructor(program: com.takusemba.rtmppublisher.gles.Texture2dProgram);
 					public getProgram(): com.takusemba.rtmppublisher.gles.Texture2dProgram;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.Texture2dProgram);
+					public changeProgram(program: com.takusemba.rtmppublisher.gles.Texture2dProgram): void;
+					public drawFrame(textureId: number, texMatrix: native.Array<number>): void;
+					public release(doEglCleanup: boolean): void;
 					public createTextureObject(): number;
 				}
 			}
@@ -433,7 +444,7 @@ declare module com {
 			export module gles {
 				export class GeneratedTexture extends java.lang.Object {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.GeneratedTexture>;
-					public static createTestTexture(param0: com.takusemba.rtmppublisher.gles.GeneratedTexture.Image): number;
+					public static createTestTexture(which: com.takusemba.rtmppublisher.gles.GeneratedTexture.Image): number;
 					public constructor();
 				}
 				export module GeneratedTexture {
@@ -442,8 +453,8 @@ declare module com {
 						public static COARSE: com.takusemba.rtmppublisher.gles.GeneratedTexture.Image;
 						public static FINE: com.takusemba.rtmppublisher.gles.GeneratedTexture.Image;
 						public static values(): native.Array<com.takusemba.rtmppublisher.gles.GeneratedTexture.Image>;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
-						public static valueOf(param0: string): com.takusemba.rtmppublisher.gles.GeneratedTexture.Image;
+						public static valueOf(name: string): com.takusemba.rtmppublisher.gles.GeneratedTexture.Image;
+						public static valueOf(enumType: java.lang.Class<any>, name: string): java.lang.Enum<any>;
 					}
 				}
 			}
@@ -459,13 +470,13 @@ declare module com {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.GlUtil>;
 					public static TAG: string;
 					public static IDENTITY_MATRIX: native.Array<number>;
-					public static loadShader(param0: number, param1: string): number;
 					public static logVersionInfo(): void;
-					public static createProgram(param0: string, param1: string): number;
-					public static checkLocation(param0: number, param1: string): void;
-					public static checkGlError(param0: string): void;
-					public static createFloatBuffer(param0: native.Array<number>): java.nio.FloatBuffer;
-					public static createImageTexture(param0: java.nio.ByteBuffer, param1: number, param2: number, param3: number): number;
+					public static createFloatBuffer(coords: native.Array<number>): java.nio.FloatBuffer;
+					public static checkLocation(location: number, label: string): void;
+					public static createImageTexture(data: java.nio.ByteBuffer, width: number, height: number, format: number): number;
+					public static createProgram(vertexSource: string, fragmentSource: string): number;
+					public static loadShader(shaderType: number, source: string): number;
+					public static checkGlError(op: string): void;
 				}
 			}
 		}
@@ -478,9 +489,9 @@ declare module com {
 			export module gles {
 				export class OffscreenSurface extends com.takusemba.rtmppublisher.gles.EglSurfaceBase {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.OffscreenSurface>;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore);
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore, param1: number, param2: number);
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore, width: number, height: number);
 					public release(): void;
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore);
 				}
 			}
 		}
@@ -493,22 +504,22 @@ declare module com {
 			export module gles {
 				export class Sprite2d extends java.lang.Object {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.Sprite2d>;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.Drawable2d);
+					public draw(program: com.takusemba.rtmppublisher.gles.FlatShadedProgram, projectionMatrix: native.Array<number>): void;
 					public getScaleY(): number;
-					public setScale(param0: number, param1: number): void;
-					public setTexture(param0: number): void;
 					public getColor(): native.Array<number>;
-					public draw(param0: com.takusemba.rtmppublisher.gles.FlatShadedProgram, param1: native.Array<number>): void;
 					public getModelViewMatrix(): native.Array<number>;
 					public getPositionY(): number;
+					public setTexture(textureId: number): void;
+					public setRotation(angle: number): void;
+					public setColor(red: number, green: number, blue: number): void;
 					public getScaleX(): number;
-					public setRotation(param0: number): void;
+					public draw(program: com.takusemba.rtmppublisher.gles.Texture2dProgram, projectionMatrix: native.Array<number>): void;
 					public toString(): string;
 					public getRotation(): number;
+					public setScale(scaleX: number, scaleY: number): void;
 					public getPositionX(): number;
-					public setPosition(param0: number, param1: number): void;
-					public setColor(param0: number, param1: number, param2: number): void;
-					public draw(param0: com.takusemba.rtmppublisher.gles.Texture2dProgram, param1: native.Array<number>): void;
+					public setPosition(posX: number, posY: number): void;
+					public constructor(drawable: com.takusemba.rtmppublisher.gles.Drawable2d);
 				}
 			}
 		}
@@ -522,13 +533,13 @@ declare module com {
 				export class Texture2dProgram extends java.lang.Object {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.Texture2dProgram>;
 					public static KERNEL_SIZE: number;
-					public setTexSize(param0: number, param1: number): void;
-					public setKernel(param0: native.Array<number>, param1: number): void;
+					public draw(mvpMatrix: native.Array<number>, vertexBuffer: java.nio.FloatBuffer, firstVertex: number, vertexCount: number, coordsPerVertex: number, vertexStride: number, texMatrix: native.Array<number>, texBuffer: java.nio.FloatBuffer, textureId: number, texStride: number): void;
+					public setKernel(values: native.Array<number>, colorAdj: number): void;
 					public getProgramType(): com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
 					public release(): void;
+					public setTexSize(width: number, height: number): void;
+					public constructor(programType: com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType);
 					public createTextureObject(): number;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType);
-					public draw(param0: native.Array<number>, param1: java.nio.FloatBuffer, param2: number, param3: number, param4: number, param5: number, param6: native.Array<number>, param7: java.nio.FloatBuffer, param8: number, param9: number): void;
 				}
 				export module Texture2dProgram {
 					export class ProgramType {
@@ -537,9 +548,9 @@ declare module com {
 						public static TEXTURE_EXT: com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
 						public static TEXTURE_EXT_BW: com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
 						public static TEXTURE_EXT_FILT: com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
+						public static valueOf(name: string): com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
 						public static values(): native.Array<com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType>;
-						public static valueOf(param0: string): com.takusemba.rtmppublisher.gles.Texture2dProgram.ProgramType;
-						public static valueOf(param0: java.lang.Class<any>, param1: string): java.lang.Enum<any>;
+						public static valueOf(enumType: java.lang.Class<any>, name: string): java.lang.Enum<any>;
 					}
 				}
 			}
@@ -553,11 +564,11 @@ declare module com {
 			export module gles {
 				export class WindowSurface extends com.takusemba.rtmppublisher.gles.EglSurfaceBase {
 					public static class: java.lang.Class<com.takusemba.rtmppublisher.gles.WindowSurface>;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore);
-					public recreate(param0: com.takusemba.rtmppublisher.gles.EglCore): void;
+					public recreate(newEglCore: com.takusemba.rtmppublisher.gles.EglCore): void;
 					public release(): void;
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore, param1: globalAndroid.view.Surface, param2: boolean);
-					public constructor(param0: com.takusemba.rtmppublisher.gles.EglCore, param1: globalAndroid.graphics.SurfaceTexture);
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore);
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore, surface: globalAndroid.view.Surface, releaseSurface: boolean);
+					public constructor(eglCore: com.takusemba.rtmppublisher.gles.EglCore, surfaceTexture: globalAndroid.graphics.SurfaceTexture);
 				}
 			}
 		}

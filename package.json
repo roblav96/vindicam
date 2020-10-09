@@ -15,7 +15,9 @@
 		"livego:livego": "livego --flv_dir livego/flv --level debug",
 		"livego:curl": "delay 1 && curl 'http://127.0.0.1:8090/control/get?room=test'",
 		"postinstall": "run-p postinstall:*",
-		"postinstall:update-ns-webpack": "echo cpy node_modules/@nativescript/webpack/templates/webpack.typescript.js ."
+		"postinstall:android-platform-29": "cpy ../android-dts-generator/out/android-platform-29.d.ts node_modules/@nativescript/types-android/lib/android",
+		"postinstall:androidx-29": "cpy ../android-dts-generator/out/androidx-29.d.ts node_modules/@nativescript/types-android/lib/android",
+		"postinstall:update-ns-webpack": "update-ns-webpack --configs"
 	},
 	"dependencies": {
 		"@nativescript/core": "^7.0.10",
@@ -32,7 +34,7 @@
 		"@nativescript/android": "7.0.0",
 		"@nativescript/ios": "7.0.1",
 		"@nativescript/types": "^7.0.4",
-		"@nativescript/webpack": "^3.0.5",
+		"@nativescript/webpack": "^3.0.7",
 		"@types/lodash": "^4.14.161",
 		"@types/shimmer": "^1.0.1",
 		"cpy-cli": "^3.1.1",
