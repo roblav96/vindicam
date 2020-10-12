@@ -12,10 +12,11 @@ export class Permissions extends PermissionsBase {
 
 	async check() {
 		for (let manifest of Permissions.manifests) {
-			if (
-				androidx.core.content.ContextCompat.checkSelfPermission(activity, manifest) !=
-				android.content.pm.PackageManager.PERMISSION_GRANTED
-			) {
+			let result = androidx.core.content.ContextCompat.checkSelfPermission(
+				ad.foregroundActivity,
+				manifest,
+			)
+			if (result != android.content.pm.PackageManager.PERMISSION_GRANTED) {
 				return false
 			}
 		}
@@ -45,7 +46,7 @@ export class Permissions extends PermissionsBase {
 				},
 			)
 			androidx.core.app.ActivityCompat.requestPermissions(
-				activity,
+				ad.foregroundActivity,
 				Permissions.manifests,
 				requestCode,
 			)
