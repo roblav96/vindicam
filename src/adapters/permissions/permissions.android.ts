@@ -9,6 +9,7 @@ export class Permissions extends PermissionsBase {
 		android.Manifest.permission.RECORD_AUDIO,
 		android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
 	]
+
 	async check() {
 		for (let manifest of Permissions.manifests) {
 			if (
@@ -20,6 +21,7 @@ export class Permissions extends PermissionsBase {
 		}
 		return true
 	}
+
 	async request() {
 		return new Promise<boolean>((resolve, reject) => {
 			let requestCode = R.random(100, 999)
@@ -49,9 +51,8 @@ export class Permissions extends PermissionsBase {
 			)
 		})
 	}
+
 	async ensure() {
 		return (await this.check()) || (await this.request())
 	}
 }
-
-export default new Permissions()
