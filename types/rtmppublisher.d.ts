@@ -17,7 +17,6 @@ declare module com {
 			export class AudioHandler extends java.lang.Object implements com.takusemba.rtmppublisher.AudioRecorder.OnAudioRecorderStateChangedListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.AudioHandler>;
 				public onAudioRecorded(data: native.Array<number>, length: number): void;
-				public onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
 			}
 			export module AudioHandler {
 				export class OnAudioEncoderStateListener extends java.lang.Object {
@@ -26,10 +25,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.AudioHandler$OnAudioEncoderStateListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
+						onAudioDataEncoded(bytes0: native.Array<number>, int1: number, int2: number): void;
 					});
 					public constructor();
-					public onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
+					public onAudioDataEncoded(bytes0: native.Array<number>, int1: number, int2: number): void;
 				}
 			}
 		}
@@ -50,10 +49,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.AudioRecorder$OnAudioRecorderStateChangedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
+						onAudioRecorded(bytes0: native.Array<number>, int1: number): void;
 					});
 					public constructor();
-					public onAudioRecorded(arg1: native.Array<number>, arg2: number): void;
+					public onAudioRecorded(bytes0: native.Array<number>, int1: number): void;
 				}
 			}
 		}
@@ -108,11 +107,8 @@ declare module com {
 			export class CameraSurfaceRenderer extends java.lang.Object implements globalAndroid.opengl.GLSurfaceView.Renderer {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.CameraSurfaceRenderer>;
 				public onDrawFrame(unused: javax.microedition.khronos.opengles.GL10): void;
-				public onDrawFrame(arg1: javax.microedition.khronos.opengles.GL10): void;
 				public onSurfaceCreated(unused: javax.microedition.khronos.opengles.GL10, config: javax.microedition.khronos.egl.EGLConfig): void;
-				public onSurfaceCreated(arg1: javax.microedition.khronos.opengles.GL10, arg2: javax.microedition.khronos.egl.EGLConfig): void;
 				public onSurfaceChanged(unused: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
-				public onSurfaceChanged(arg1: javax.microedition.khronos.opengles.GL10, arg2: number, arg3: number): void;
 			}
 			export module CameraSurfaceRenderer {
 				export class OnRendererStateChangedListener extends java.lang.Object {
@@ -121,12 +117,12 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.CameraSurfaceRenderer$OnRendererStateChangedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
-						onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
+						onSurfaceCreated(surfaceTexture0: globalAndroid.graphics.SurfaceTexture): void;
+						onFrameDrawn(int0: number, floats1: native.Array<number>, long2: number): void;
 					});
 					public constructor();
-					public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
-					public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
+					public onSurfaceCreated(surfaceTexture0: globalAndroid.graphics.SurfaceTexture): void;
+					public onFrameDrawn(int0: number, floats1: native.Array<number>, long2: number): void;
 				}
 			}
 		}
@@ -240,15 +236,12 @@ declare module com {
 				public onSurfaceCreated(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
 				public onFrameDrawn(textureId: number, transform: native.Array<number>, timestamp: number): void;
 				public onResume(owner: any): void;
-				public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
 				public startPublishing(): void;
 				public switchCamera(): void;
 				public onPause(owner: any): void;
 				public onFrameAvailable(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
-				public onFrameAvailable(arg1: globalAndroid.graphics.SurfaceTexture): void;
 				public isPublishing(): boolean;
 				public stopPublishing(): void;
-				public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
 			}
 		}
 	}
@@ -259,10 +252,8 @@ declare module com {
 		export module rtmppublisher {
 			export class Streamer extends java.lang.Object implements com.takusemba.rtmppublisher.VideoHandler.OnVideoEncoderStateListener, com.takusemba.rtmppublisher.AudioHandler.OnAudioEncoderStateListener {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.Streamer>;
-				public onAudioDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 				public onVideoDataEncoded(data: native.Array<number>, size: number, timestamp: number): void;
 				public onAudioDataEncoded(data: native.Array<number>, size: number, timestamp: number): void;
-				public onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
 			}
 		}
 	}
@@ -288,8 +279,6 @@ declare module com {
 				public static class: java.lang.Class<com.takusemba.rtmppublisher.VideoHandler>;
 				public onSurfaceCreated(surfaceTexture: globalAndroid.graphics.SurfaceTexture): void;
 				public onFrameDrawn(textureId: number, transform: native.Array<number>, timestamp: number): void;
-				public onSurfaceCreated(arg1: globalAndroid.graphics.SurfaceTexture): void;
-				public onFrameDrawn(arg1: number, arg2: native.Array<number>, arg3: number): void;
 			}
 			export module VideoHandler {
 				export class OnVideoEncoderStateListener extends java.lang.Object {
@@ -298,10 +287,10 @@ declare module com {
 					 * Constructs a new instance of the com.takusemba.rtmppublisher.VideoHandler$OnVideoEncoderStateListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
 					 */
 					public constructor(implementation: {
-						onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
+						onVideoDataEncoded(bytes0: native.Array<number>, int1: number, int2: number): void;
 					});
 					public constructor();
-					public onVideoDataEncoded(arg1: native.Array<number>, arg2: number, arg3: number): void;
+					public onVideoDataEncoded(bytes0: native.Array<number>, int1: number, int2: number): void;
 				}
 			}
 		}
