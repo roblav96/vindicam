@@ -11,11 +11,9 @@ repositories {
 // project.ext.targetSdk = '28'
 
 dependencies {
-	implementation 'androidx.appcompat:appcompat:1.2.+'
 	implementation 'androidx.legacy:legacy-support-v4:1.+'
+	implementation 'androidx.appcompat:appcompat:1.2.+'
 	implementation 'com.google.android.material:material:1.2.+'
-
-	implementation 'com.karumi:dexter:+'
 
 	implementation 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:+'
 	// implementation 'com.github.takusemba:rtmppublisher:+'

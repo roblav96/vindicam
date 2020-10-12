@@ -1,6 +1,6 @@
 import * as Application from '@nativescript/core/application'
-import * as Permissions from '~/adapters/permissions/permissions'
 import { Observable, EventData, Page, NavigatedData, TapGestureEventData } from '@nativescript/core'
+import { Permissions } from '~/adapters/permissions/permissions'
 
 export function navigatingTo(args: NavigatedData) {
 	let page = args.object as Page
@@ -13,8 +13,9 @@ export function navigatedTo(args: NavigatedData) {
 
 export async function tapPermissions(args: EventData) {
 	let page = (args.object as any).page as Page
-	await Permissions.ensurePermissions()
-	page.frame.navigate('pages/rtmp-page')
+	if (await new Permissions().ensure()) {
+		page.frame.navigate('pages/rtmp-page')
+	}
 }
 
 export class LandingPage extends Observable {}

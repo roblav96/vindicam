@@ -47,7 +47,7 @@ export function NativeProperty<C extends ViewBase, T>(
 }
 
 export function DefineProperty<T>(target: T, key: keyof T, get: (this: T) => T[keyof T]) {
-	Object.defineProperty(target, key, {
+	return Object.defineProperty(target, key, {
 		get,
 		enumerable: true,
 		configurable: true,
