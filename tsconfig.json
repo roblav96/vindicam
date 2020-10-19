@@ -13,8 +13,8 @@
 	},
 	"include": [
 		"node_modules/@nativescript/types-android/lib/android-29.d.ts",
-		"node_modules/@nativescript/types-ios/lib/ios/ios.d.ts",
-		"types/**/*.d.ts",
+		"types/android/**/*.d.ts",
+		"src/**/*.d.ts",
 		"src/**/*.ts"
 	],
 	"exclude": ["App_Resources", "hooks", "platforms"]

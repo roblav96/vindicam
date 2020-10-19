@@ -1,13 +1,13 @@
 import * as Application from '@nativescript/core/application'
-Application.on('uncaughtError', (args) =>
-	console.error('████  UNCAUGHT ERROR  ████ ->', args.error),
-)
-Application.on('discardedError', (args) =>
-	console.error('████  DISCARDED ERROR  ████ ->', args.error),
-)
+Application.on(Application.uncaughtErrorEvent, (args: Application.UnhandledErrorEventData) => {
+	console.error('████  UNCAUGHT ERROR  ████ ->', args.error)
+})
+Application.on(Application.discardedErrorEvent, (args: Application.DiscardedErrorEventData) => {
+	console.error('████  DISCARDED ERROR  ████ ->', args.error)
+})
 
 // import { Trace } from '@nativescript/core/trace'
-// Trace.setCategories(Trace.categories.All)
+// Trace.setCategories(Trace.categories.Error)
 // Trace.enable()
 
 import * as dayjs from 'dayjs'

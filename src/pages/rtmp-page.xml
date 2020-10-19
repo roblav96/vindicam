@@ -6,7 +6,7 @@
 >
 	<ActionBar title="Vindicam - Rtmp" />
 	<StackLayout>
-		<Button text="Connect" tap="{{ tapConnect }}" class="-primary" height="10%" />
-		<CameraView:CameraView height="90%" />
+		<Button text="Connect" tap="tapConnect" class="-primary" height="10%" />
+		<CameraView:CameraView id="camera_view" height="80%" />
 	</StackLayout>
 </Page>

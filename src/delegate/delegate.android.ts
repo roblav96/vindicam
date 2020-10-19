@@ -1,3 +1,4 @@
+import '~/android/RtpService'
 import * as Application from '@nativescript/core/application'
 import { DefineProperty } from '~/utils/decorators'
 

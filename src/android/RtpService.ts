@@ -2,7 +2,6 @@ import * as Application from '@nativescript/core/application'
 import * as Utils from '@nativescript/core/utils/utils'
 import * as utils from '~/utils/utils'
 
-
 // export function init(contextApp: androidx.appcompat.app.AppCompatActivity) {
 // 	com.tns.android.RtpService.contextApp = contextApp
 // 	if (com.tns.android.RtpService.camera2Base == null) {
@@ -27,8 +26,9 @@ import * as utils from '~/utils/utils'
 
 @NativeClass()
 @JavaProxy('com.tns.android.RtpService')
-export class RtpService extends androidx.core.app.JobIntentService {
+export default class extends androidx.core.app.JobIntentService {
 	static camera2Base: com.pedro.rtplibrary.base.Camera2Base
+	static checker: net.ossrs.rtmp.ConnectCheckerRtmp
 	static contextApp: androidx.appcompat.app.AppCompatActivity
 	static openGlView: com.pedro.rtplibrary.view.OpenGlView
 
@@ -46,10 +46,7 @@ export class RtpService extends androidx.core.app.JobIntentService {
 		super.onCreate()
 		console.log('█ onCreate ->')
 		console.log('com.tns.android.RtpService ->', com.tns.android.RtpService)
-		console.log(
-			'com.tns.android.RtpService.contextApp ->',
-			com.tns.android.RtpService.contextApp,
-		)
+		console.log('contextApp ->', com.tns.android.RtpService.contextApp)
 		this.channelId = 'rtpStreamChannel'
 		this.notifyId = utils.hash(this.channelId)
 		console.log('this.notifyId ->', this.notifyId)
@@ -84,10 +81,7 @@ export class RtpService extends androidx.core.app.JobIntentService {
 	onStartCommand(intent: android.content.Intent, flags: number, startId: number) {
 		super.onStartCommand(intent, flags, startId)
 		console.log('█ onStartCommand ->', intent, flags, startId)
-		console.log(
-			'com.tns.android.RtpService.contextApp ->',
-			com.tns.android.RtpService.contextApp,
-		)
+		console.log('contextApp ->', com.tns.android.RtpService.contextApp)
 		this.endpoint = intent.getStringExtra('endpoint')
 		this.prepareStreamRtp()
 		this.startStreamRtp(this.endpoint)
@@ -110,10 +104,17 @@ export class RtpService extends androidx.core.app.JobIntentService {
 
 	prepareStreamRtp() {}
 
-	startStreamRtp(endpoint: string) {}
+	startStreamRtp(endpoint: string) {
+		if (
+			com.tns.android.RtpService.camera2Base.prepareAudio() &&
+			com.tns.android.RtpService.camera2Base.prepareVideo()
+		) {
+			com.tns.android.RtpService.camera2Base.startStream(endpoint)
+		}
+	}
 }
 
-import { RtpService as RtpServiceClass } from './RtpService'
+import { default as RtpServiceClass } from './RtpService'
 declare global {
 	export module com {
 		export module tns {
