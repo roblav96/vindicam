@@ -50,7 +50,6 @@ export default class extends androidx.core.app.JobIntentService {
 		this.channelId = 'rtpStreamChannel'
 		this.notifyId = utils.hash(this.channelId)
 		console.log('this.notifyId ->', this.notifyId)
-		// let context = Utils.ad.getApplicationContext() as android.content.Context
 		this.notificationManager = this.getSystemService(
 			android.content.Context.NOTIFICATION_SERVICE,
 		)

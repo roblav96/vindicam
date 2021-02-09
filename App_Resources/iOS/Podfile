@@ -1,6 +1,6 @@
 platform :ios, '10.0'
 
-# pod 'HaishinKit'
+pod 'HaishinKit'
 # pod 'LFLiveKit', git: 'https://github.com/17media/LFLiveKit.git'
 
 post_install do |installer|
